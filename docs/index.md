@@ -5,8 +5,7 @@
 :maxdepth: 2
 :hidden:
 
-start/index
-about/index
+start
 ```
 
 # 索引与表格
