@@ -332,21 +332,16 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id11">
-   反斜杠
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id12">
    注脚
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id16">
-   不常用标记
+  <a class="reference internal nav-link" href="#id14">
+   语义标记
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id17">
+  <a class="reference internal nav-link" href="#id15">
    页内跳转与自动链接
   </a>
  </li>
@@ -589,7 +584,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li><p><code class="docutils literal notranslate"><span class="pre">link</span></code> 为链接地址。</p></li>
 </ul>
 <div class="admonition- admonition">
-<p class="admonition-title">例 6：链接</p>
+<p class="admonition-title">例 5：链接</p>
 <div class="tab-set docutils">
 <input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">标记</label><div class="tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>这就是我们常用的地址：[简书](http://www.jianshu.com)
@@ -612,22 +607,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ol>
 </div>
 <div class="section" id="id11">
-<h2>反斜杠<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">\</span></code> 表示反斜杠。在你不想显示 Markdown 标记时可以使用反斜杠。</p>
-<div class="admonition- admonition">
-<p class="admonition-title">例 7</p>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">标记</label><div class="tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">\*这里不会显示斜体\*</span></code></p>
-</div>
-<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">效果</label><div class="tab-content docutils">
-<p>*这里不会显示斜体*</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>注脚<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<h2>注脚<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
 <p>在需要添加注脚的文字后加上脚注名字 <code class="docutils literal notranslate"><span class="pre">[^注脚名字]</span></code>，称为 <strong>加注</strong>；
 然后在文本的任意位置（一般在最后）添加脚注，脚注前必须有对应的脚注名字。</p>
 <div class="admonition caution">
@@ -635,49 +615,26 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>注脚与注脚之间必须空一行，不然会失效。成功后会发现，即使你没有把注脚写在文末，经 Markdown 转换后，也会自动归类到文章的最后。</p>
 </div>
 <div class="admonition- admonition">
-<p class="admonition-title">例 8</p>
+<p class="admonition-title">例 6</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">标记</label><div class="tab-content docutils">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>使用 Markdown[^1]可以效率的书写文档, 直接转换成 HTML[^2], 你可以使用 Leanote[^Le] 编辑器进行书写。
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">标记</label><div class="tab-content docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>使用 Markdown[^1] 可以效率的书写文档，直接转换成 HTML[^2]。
 
-[^1]: Markdown是一种纯文本标记语言(冒号与文字之间需要有空格)
+[^1]: Markdown 是一种纯文本标记语言
 
-[^2]: HyperText,超文本标记语言
-
-[^Le]: 开源笔记平台，支持Markdown和笔记直接发为博文
+[^2]: HyperText 超文本标记语言
 
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">效果</label><div class="tab-content docutils">
-<p>使用 Markdown<a class="footnote-reference brackets" href="#id18" id="id13">1</a> 可以效率的书写文档, 直接转换成 HTML<a class="footnote-reference brackets" href="#id19" id="id14">2</a>, 你可以使用 Leanote<a class="footnote-reference brackets" href="#le" id="id15">3</a> 编辑器进行书写。</p>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">效果</label><div class="tab-content docutils">
+<p>使用 Markdown<a class="footnote-reference brackets" href="#id16" id="id12">1</a> 可以效率的书写文档，直接转换成 HTML<a class="footnote-reference brackets" href="#id17" id="id13">2</a>。</p>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="id16">
-<h2>不常用标记<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
-<ul class="simple">
-<li><p>使用 <code class="docutils literal notranslate"><span class="pre">~~</span></code> 表示删除线。</p></li>
-</ul>
-<div class="admonition- admonition">
-<p class="admonition-title">例 9</p>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">标记</label><div class="tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">~~这是一条删除线~~</span></code></p>
-</div>
-<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">效果</label><div class="tab-content docutils">
-<p>~~这是一条删除线~~</p>
-</div>
-</div>
-</div>
-<div class="admonition caution">
-<p class="admonition-title">小心</p>
-<p>注意 <code class="docutils literal notranslate"><span class="pre">~~</span></code> 和要添加删除线的文字之间不能有空格。</p>
-</div>
-<ul class="simple">
-<li><p>语义标记</p></li>
-</ul>
+<div class="section" id="id14">
+<h2>语义标记<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>效果</p></th>
@@ -700,44 +657,32 @@ commentsRunWhenDOMLoaded(addUtterances);
 <tr class="row-even"><td class="text-align:left"><p><strong><em>加粗+斜体</em></strong></p></td>
 <td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">**_加粗+斜体_**</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>~~删除线~~</p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">~~删除线~~</span></code></p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Z<sub>a</sub></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">Z{sub}`a`</span></code></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><i>斜体</i></p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;i&gt;斜体&lt;/i&gt;</span></code></p></td>
+<tr class="row-even"><td class="text-align:left"><p>Z<sup>a</sup></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">Z{sup}`a`</span></code></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><b>加粗</b></p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;b&gt;加粗&lt;/b&gt;</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p><em>强调</em></p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;em&gt;强调&lt;/em&gt;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p>Z<sup>a</sup></p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">Z&lt;sup&gt;a&lt;/sup&gt;</span></code></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:left"><p>Z<sub>a</sub></p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">Z&lt;sub&gt;a&lt;/sub&gt;</span></code></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:left"><p><kbd>Ctrl</kbd></p></td>
-<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">&lt;kbd&gt;Ctrl&lt;/kbd&gt;</span></code></p></td>
+<tr class="row-odd"><td class="text-align:left"><p><kbd class="kbd docutils literal notranslate">Ctrl</kbd></p></td>
+<td class="text-align:left"><p><code class="docutils literal notranslate"><span class="pre">{kbd}`Ctrl`</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="id17">
-<h2>页内跳转与自动链接<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id15">
+<h2>页内跳转与自动链接<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
 <p>想要跳转到页内某个标题，只需要使用标记 <code class="docutils literal notranslate"><span class="pre">[引用的标题注解](#标题名字)</span></code>。</p>
 <p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用 <code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code> 包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：</p>
 <div class="admonition- admonition">
-<p class="admonition-title">例 10</p>
+<p class="admonition-title">例 7</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">标记</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">标记</label><div class="tab-content docutils">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/&gt;</span>  
 <span class="o">&lt;</span><span class="n">address</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>
-<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">效果</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">效果</label><div class="tab-content docutils">
 <p><a class="reference external" href="http://example.com/">http://example.com/</a><br />
 <a class="reference external" href="mailto:address&#37;&#52;&#48;example&#46;com">mailto:address<span>&#64;</span>example<span>&#46;</span>com</a></p>
 </div>
@@ -746,14 +691,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 <p>也可以引用文件  <code class="docutils literal notranslate"><span class="pre">[example](…/…/example.md)</span></code>。</p>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
-<dt class="label" id="id18"><span class="brackets"><a class="fn-backref" href="#id13">1</a></span></dt>
-<dd><p>Markdown是一种纯文本标记语言</p>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id12">1</a></span></dt>
+<dd><p>Markdown 是一种纯文本标记语言</p>
 </dd>
-<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id14">2</a></span></dt>
-<dd><p>HyperText,超文本标记语言</p>
-</dd>
-<dt class="label" id="le"><span class="brackets"><a class="fn-backref" href="#id15">3</a></span></dt>
-<dd><p>开源笔记平台，支持Markdown和笔记直接发为博文</p>
+<dt class="label" id="id17"><span class="brackets"><a class="fn-backref" href="#id13">2</a></span></dt>
+<dd><p>HyperText 超文本标记语言</p>
 </dd>
 </dl>
 </div>
