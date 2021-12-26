@@ -234,5 +234,12 @@ a31 & a32  & a33 & b3  \\
 \end{array}
 $$
 
-还可以表示 `$\KaTeX$` 和 `$\LaTeX$` 为 ：
-$\KaTeX$  $\LaTeX$。
+还可以表示 `$\LaTeX$` 为 ：$\LaTeX$。
+
+## 高亮
+
+$$
+\bbox[yellow]{
+    e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)
+}
+$$
