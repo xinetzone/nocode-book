@@ -4,7 +4,7 @@
 :maxdepth: 2
 :hidden:
 
-narrative-document
+narrative
 math/index
 code
 ```
