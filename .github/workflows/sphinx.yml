@@ -43,6 +43,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
+          conda install -c conda-forge myst-parser
 
       - name: 🔧 Build HTML
         run: |
