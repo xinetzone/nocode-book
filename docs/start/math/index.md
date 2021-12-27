@@ -1,16 +1,5 @@
 # 数学
 
-```{toctree}
-:maxdepth: 2
-:hidden:
-
-basic
-raw
-raw1
-raw2
-raw3
-```
-
 简单使用：
 
 - `$` 表示行内公式：
@@ -58,3 +47,13 @@ raw3
 
     $$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$
     ````
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+
+basic
+special-symbols
+matrix
+other
+```

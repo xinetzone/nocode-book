@@ -1,4 +1,4 @@
-# 基础
+# Mermaid
 
 在 [`VS code`](https://code.visualstudio.com/) 中安装插件 `Markdown Preview Mermaid Support`，则便可支持 Mermaid
 
