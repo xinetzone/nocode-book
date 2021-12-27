@@ -7,4 +7,6 @@
 narrative
 math/index
 code
+glossary-todolist
+mermaid
 ```

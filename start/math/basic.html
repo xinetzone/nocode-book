@@ -96,7 +96,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="shortcut icon" href="../../_static/page-logo.jfif"/>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="未分类" href="raw.html" />
+    <link rel="next" title="特殊符号" href="special-symbols.html" />
     <link rel="prev" title="数学" href="index.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
@@ -198,23 +198,18 @@ commentsRunWhenDOMLoaded(addUtterances);
       </a>
      </li>
      <li class="toctree-l3">
-      <a class="reference internal" href="raw.html">
-       未分类
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="raw1.html">
-       1. 如何输入括号和分隔符
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="raw2.html">
-       基础
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="raw3.html">
+      <a class="reference internal" href="special-symbols.html">
        特殊符号
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="matrix.html">
+       矩阵
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="other.html">
+       其他
       </a>
      </li>
     </ul>
@@ -222,6 +217,16 @@ commentsRunWhenDOMLoaded(addUtterances);
    <li class="toctree-l2">
     <a class="reference internal" href="../code.html">
      代码
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../glossary-todolist.html">
+     术语与待办
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../mermaid.html">
+     Mermaid
     </a>
    </li>
   </ul>
@@ -331,76 +336,80 @@ commentsRunWhenDOMLoaded(addUtterances);
     括号和分隔符
    </strong>
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     <strong>
+      大括号和行标
+     </strong>
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id4">
+  <a class="reference internal nav-link" href="#id5">
+   偏导
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
    <strong>
     分数
    </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id5">
+  <a class="reference internal nav-link" href="#id7">
    <strong>
     开方
    </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id6">
+  <a class="reference internal nav-link" href="#id8">
    <strong>
     省略号
    </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id7">
+  <a class="reference internal nav-link" href="#id9">
    <strong>
     矢量
    </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id8">
+  <a class="reference internal nav-link" href="#id10">
    <strong>
     积分
    </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id9">
-   <strong>
-    极限运算
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id10">
-   <strong>
-    累加、累乘运算
-   </strong>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id11">
    <strong>
-    希腊字母
+    极限
    </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id12">
-   大括号和行标的使用
+   <strong>
+    累加、累乘
+   </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id13">
-   字体转换
+   <strong>
+    设定表格
+   </strong>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id14">
-   设定表格
+   对齐多行公式
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -420,27 +429,33 @@ commentsRunWhenDOMLoaded(addUtterances);
               <div>
                  <div class="tex2jax_ignore mathjax_ignore section" id="id1">
 <h1>基础<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>本节介绍数学公式常用语法。</p>
 <div class="section" id="id2">
 <h2><strong>上下标</strong><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">^</span> </code>表示上标, <code class="docutils literal notranslate"><span class="pre">_</span></code> 表示下标。如果上下标的内容多于一个字符，需要用 <code class="docutils literal notranslate"><span class="pre">{}</span></code>将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。<br />
-例子：
-<code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">x^{y^z}=(1+{\rm</span> <span class="pre">e}^x)^{-2xy^w}</span> <span class="pre">$$</span></code><br />
-显示：</p>
+<p><code class="docutils literal notranslate"><span class="pre">^</span></code> 表示上标, <code class="docutils literal notranslate"><span class="pre">_</span></code> 表示下标。如果上下标的内容多于一个字符，需要用 <code class="docutils literal notranslate"><span class="pre">{}</span></code> 将这些内容括成一个整体。上下标可以嵌套，也可以同时使用。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">例 1</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">x^{y^z}=(1+{\rm</span> <span class="pre">e}^x)^{-2xy^w}</span> <span class="pre">$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">显示</label><div class="tab-content docutils">
 <div class="math notranslate nohighlight">
 \[ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} \]</div>
-<p>另外，如果要在左右两边都有上下标，可以用<code class="docutils literal notranslate"> <span class="pre">\sideset</span></code> 命令</p>
-<ul class="simple">
-<li><p>例子：
-<code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">\sideset{^1_2}{^3_4}\bigotimes</span> <span class="pre">$$</span></code></p></li>
-<li><p>显示：</p></li>
-</ul>
+</div>
+</div>
+<p>另外，如果要在左右两边都有上下标，可以用 <code class="docutils literal notranslate"><span class="pre">\sideset</span></code> 命令</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">例 2</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">\sideset{^1_2}{^3_4}\bigotimes</span> <span class="pre">$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">显示</label><div class="tab-content docutils">
 <div class="math notranslate nohighlight">
 \[ \sideset{^1_2}{^3_4}\bigotimes \]</div>
 </div>
+</div>
+</div>
 <div class="section" id="id3">
 <h2><strong>括号和分隔符</strong><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">()</span></code>、<code class="docutils literal notranslate"><span class="pre">[]</span> </code>和<code class="docutils literal notranslate"><span class="pre">|</span></code>表示符号本身，使用 <code class="docutils literal notranslate"><span class="pre">\{\}</span></code> 来表示 <code class="docutils literal notranslate"><span class="pre">{}</span> </code>。当要显示大号的括号或分隔符时，要用 <code class="docutils literal notranslate"><span class="pre">\left</span></code> 和 <code class="docutils literal notranslate"><span class="pre">\right</span></code> 命令。
-一些特殊的括号：</p>
+<p><code class="docutils literal notranslate"><span class="pre">()</span></code>、<code class="docutils literal notranslate"><span class="pre">[]</span></code> 和 <code class="docutils literal notranslate"><span class="pre">|</span></code> 表示符号本身，使用 <code class="docutils literal notranslate"><span class="pre">\{\}</span></code> 来表示 <code class="docutils literal notranslate"><span class="pre">{}</span></code>。当要显示大括号或分隔符时，要用 <code class="docutils literal notranslate"><span class="pre">\left</span></code> 和 <code class="docutils literal notranslate"><span class="pre">\right</span></code> 命令。一些特殊的括号：</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>输入</p></th>
@@ -462,232 +477,40 @@ commentsRunWhenDOMLoaded(addUtterances);
 </tr>
 </tbody>
 </table>
-<p>例子：
-<code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">f(x,y,z)</span> <span class="pre">=</span> <span class="pre">3y^2z</span> <span class="pre">\left(</span> <span class="pre">3+\frac{7x+5}{1+y^2}</span> <span class="pre">\right)</span> <span class="pre">$$</span></code><br />
-显示：
-$<span class="math notranslate nohighlight">\( f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right) \)</span>$</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">例 3</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">f(x,y,z)</span> <span class="pre">=</span> <span class="pre">3y^2z</span> <span class="pre">\left(</span> <span class="pre">3+\frac{7x+5}{1+y^2}</span> <span class="pre">\right)</span> <span class="pre">$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[ f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right) \]</div>
+</div>
 </div>
 <div class="section" id="id4">
-<h2><strong>分数</strong><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
-<p>通常使用 <code class="docutils literal notranslate"><span class="pre">\frac</span> <span class="pre">{分子}</span> <span class="pre">{分母}</span> </code>命令产生一个分数\frac {分子} {分母}，分数可嵌套。
-便捷情况可直接输入 <code class="docutils literal notranslate"><span class="pre">\frac</span> <span class="pre">ab</span> </code>来快速生成一个\frac ab。
-如果分式很复杂，亦可使用 分子 \over 分母 命令，此时分数仅有一层。</p>
-<p>例子：</p>
-<p><code class="docutils literal notranslate"><span class="pre">$$\frac{a-1}{b-1}</span> <span class="pre">\quad</span>&#160; <span class="pre">and</span>&#160; <span class="pre">\quad</span> <span class="pre">{a+1\over</span> <span class="pre">b+1}$$</span></code>
-$<span class="math notranslate nohighlight">\(\frac{a-1}{b-1} \quad   and   \quad {a+1\over b+1}\)</span>$</p>
-</div>
-<div class="section" id="id5">
-<h2><strong>开方</strong><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">\sqrt</span> <span class="pre">[根指数，省略时为2]</span> <span class="pre">{被开方数}</span> </code>命令输入开方。</p>
-<p>例子：</p>
-<p><code class="docutils literal notranslate"><span class="pre">$$\sqrt{2}</span> <span class="pre">\quad</span> <span class="pre">and</span> <span class="pre">\quad</span> <span class="pre">\sqrt[n]{3}$$</span></code>
-$<span class="math notranslate nohighlight">\(\sqrt{2} \quad and \quad \sqrt[n]{3}\)</span>$</p>
-</div>
-<div class="section" id="id6">
-<h2><strong>省略号</strong><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
-<p>数学公式中常见的省略号有两种，\ldots 表示与文本底线对齐的省略号，\cdots 表示与文本中线对齐的省略号。</p>
-<p>例子：</p>
-<p><code class="docutils literal notranslate"><span class="pre">$$f(x_1,x_2,\underbrace{\ldots}_{\rm</span> <span class="pre">ldots}</span> <span class="pre">,x_n)</span> <span class="pre">=</span> <span class="pre">x_1^2</span> <span class="pre">+</span> <span class="pre">x_2^2</span> <span class="pre">+</span> <span class="pre">\underbrace{\cdots}_{\rm</span> <span class="pre">cdots}</span> <span class="pre">+</span> <span class="pre">x_n^2$$</span></code></p>
-<p>显示：
-$<span class="math notranslate nohighlight">\(f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}_{\rm cdots} + x_n^2\)</span>$</p>
-</div>
-<div class="section" id="id7">
-<h2><strong>矢量</strong><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">\vec{矢量}</span> </code>来自动产生一个矢量。也可以使用 <code class="docutils literal notranslate"><span class="pre">\overrightarrow</span> </code>等命令自定义字母上方的符号。</p>
-<p>例子：</p>
-<p><code class="docutils literal notranslate"><span class="pre">$$\vec{a}</span> <span class="pre">\cdot</span> <span class="pre">\vec{b}=0$$</span></code></p>
-<p>显示：
-$<span class="math notranslate nohighlight">\(\vec{a} \cdot \vec{b}=0\)</span>$</p>
-<p>例子：</p>
-<p><code class="docutils literal notranslate"><span class="pre">$$\overleftarrow{xy}</span> <span class="pre">\quad</span> <span class="pre">and</span> <span class="pre">\quad</span> <span class="pre">\overleftrightarrow{xy}</span> <span class="pre">\quad</span> <span class="pre">and</span> <span class="pre">\quad</span> <span class="pre">\overrightarrow{xy}$$</span></code></p>
-<p>显示：
-$<span class="math notranslate nohighlight">\(\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow{xy}\)</span>$</p>
-</div>
-<div class="section" id="id8">
-<h2><strong>积分</strong><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
-<p>使用 \int_积分下限^积分上限 {被积表达式} 来输入一个积分。</p>
-<p>例子：</p>
-<p><code class="docutils literal notranslate"><span class="pre">$$\int_0^1</span> <span class="pre">{x^2}</span> <span class="pre">\,{\rm</span> <span class="pre">d}x$$</span></code></p>
-<p>显示：
-$<span class="math notranslate nohighlight">\(\int_0^1 {x^2} \,{\rm d}x\)</span>$</p>
-</div>
-<div class="section" id="id9">
-<h2><strong>极限运算</strong><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
-<p>使用<code class="docutils literal notranslate"> <span class="pre">\lim_{变量</span> <span class="pre">\to</span> <span class="pre">表达式}</span> <span class="pre">表达式</span></code> 来输入一个极限。如有需求，可以更改 <code class="docutils literal notranslate"><span class="pre">\to</span></code> 符号至任意符号。</p>
-<p>例子：</p>
-<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">\lim_{n</span> <span class="pre">\to</span> <span class="pre">+\infty}</span> <span class="pre">\frac{1}{n(n+1)}</span> <span class="pre">\quad</span> <span class="pre">and</span> <span class="pre">\quad</span> <span class="pre">\lim_{x\leftarrow{示例}}</span> <span class="pre">\frac{1}{n(n+1)}</span> <span class="pre">$$</span></code></p>
-<p>显示：
-$<span class="math notranslate nohighlight">\( \lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)} \)</span>$</p>
-</div>
-<div class="section" id="id10">
-<h2><strong>累加、累乘运算</strong><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">\sum_{下标表达式}^{上标表达式}</span> <span class="pre">{累加表达式}</span> </code>来输入一个累加。
-与之类似，使用 <code class="docutils literal notranslate"><span class="pre">\prod</span> <span class="pre">\bigcup</span> <span class="pre">\bigcap</span> </code>来分别输入累乘、并集和交集。
-此类符号在行内显示时上下标表达式将会移至右上角和右下角。</p>
-<p>例子：</p>
-<p><code class="docutils literal notranslate"><span class="pre">$$\sum_{i=1}^n</span> <span class="pre">\frac{1}{i^2}</span> <span class="pre">\quad</span> <span class="pre">and</span> <span class="pre">\quad</span> <span class="pre">\prod_{i=1}^n</span> <span class="pre">\frac{1}{i^2}</span> <span class="pre">\quad</span> <span class="pre">and</span> <span class="pre">\quad</span> <span class="pre">\bigcup_{i=1}^{2}</span> <span class="pre">R$$</span></code></p>
-<p>显示：
-$<span class="math notranslate nohighlight">\(\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R\)</span>$</p>
-</div>
-<div class="section" id="id11">
-<h2><strong>希腊字母</strong><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
-<p>输入 <code class="docutils literal notranslate"><span class="pre">\小写希腊字母英文全称</span> </code>和<code class="docutils literal notranslate"><span class="pre">\首字母大写希腊字母英文全称</span></code>来分别输入小写和大写希腊字母。
-对于大写希腊字母与现有字母相同的，直接输入大写字母即可。</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>输入</p></th>
-<th class="text-align:center head"><p>显示</p></th>
-<th class="text-align:center head"><p>输入</p></th>
-<th class="text-align:center head"><p>显示</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\alpha$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\alpha\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$A$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\beta$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\beta\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$B$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\gamma$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\gamma\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Gamma$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Gamma\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\delta$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\delta\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Delta$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Delta\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\epsilon$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\epsilon\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$E$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(E\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\zeta$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\zeta\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$Z$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(Z\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\eta$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\eta\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$H$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(H\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\theta$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\theta\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Theta$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Theta\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\iota$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\iota\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$I$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(I\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\kappa$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\kappa\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$K$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(K\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\lambda$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\lambda\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Lambda$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Lambda\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\nu$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\nu\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$N$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(N\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\mu$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\mu\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$M$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(M\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\xi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\xi\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Xi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Xi\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$o$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(o\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$O$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(O\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\pi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\pi\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Pi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Pi\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\rho$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\rho\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$P$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(P\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\sigma$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\sigma\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Sigma$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Sigma\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\tau$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\tau\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$T$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\upsilon$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\upsilon\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Upsilon$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Upsilon\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\phi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\phi\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Phi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Phi\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\chi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\chi\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$X$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(X\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\psi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Psi$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Psi\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\omega$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\omega\)</span></p></td>
-<td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">$\Omega$</span></code></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Omega\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="id12">
-<h2>大括号和行标的使用<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
-<p>使用 <code class="docutils literal notranslate"><span class="pre">\left</span> </code>和 <code class="docutils literal notranslate"><span class="pre">\right</span> </code>来创建自动匹配高度的 (圆括号)，[方括号] 和 {花括号} 。
-在每个公式末尾前使用<code class="docutils literal notranslate"><span class="pre">\tag{行标}</span></code>来实现行标。
-例子：</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$$
-f\left(
-   \left[ 
-     \frac{
-       1+\left\{x,y\right\}
-     }{
-       \left(
-          \frac{x}{y}+\frac{y}{x}
-       \right)
-       \left(u+1\right)
-     }+a
-   \right]^{3/2}
-\right)
-\tag{行标}
-$$
+<h3><strong>大括号和行标</strong><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">\left</span></code> 和 <code class="docutils literal notranslate"><span class="pre">\right</span></code> 来创建自动匹配高度的 <code class="docutils literal notranslate"><span class="pre">(圆括号)</span></code>，<code class="docutils literal notranslate"><span class="pre">[方括号]</span></code> 和 <code class="docutils literal notranslate"><span class="pre">{花括号}</span></code>。</p>
+<p>在每个公式末尾前使用 <code class="docutils literal notranslate"><span class="pre">\tag{行标}</span></code> 来实现行标。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">例 12</label><div class="tab-content docutils">
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nb">f</span><span class="nv">\left</span><span class="o">(</span><span class="nb"></span>
+<span class="nb">   </span><span class="nv">\left</span><span class="o">[</span><span class="nb"> </span>
+<span class="nb">     </span><span class="nv">\frac</span><span class="nb">{</span>
+<span class="nb">       </span><span class="m">1</span><span class="o">+</span><span class="nv">\left\{</span><span class="nb">x,y</span><span class="nv">\right\}</span><span class="nb"></span>
+<span class="nb">     }{</span>
+<span class="nb">       </span><span class="nv">\left</span><span class="o">(</span><span class="nb"></span>
+<span class="nb">          </span><span class="nv">\frac</span><span class="nb">{x}{y}</span><span class="o">+</span><span class="nv">\frac</span><span class="nb">{y}{x}</span>
+<span class="nb">       </span><span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
+<span class="nb">       </span><span class="nv">\left</span><span class="o">(</span><span class="nb">u</span><span class="o">+</span><span class="m">1</span><span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
+<span class="nb">     }</span><span class="o">+</span><span class="nb">a</span>
+<span class="nb">   </span><span class="nv">\right</span><span class="o">]</span><span class="nb">^{</span><span class="m">3</span><span class="o">/</span><span class="m">2</span><span class="nb">}</span>
+<span class="nv">\right</span><span class="o">)</span><span class="nb"></span>
+<span class="nv">\tag</span><span class="nb">{行标}</span>
+<span class="s">$$</span>
 </pre></div>
 </div>
-<p>显示：</p>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">显示</label><div class="tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 f\left(
@@ -704,87 +527,149 @@ f\left(
 \right)
 \tag{行标}
 \]</div>
-<p>小技巧：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">$\smash{\displaystyle\max_{0</span> <span class="pre">\leq</span> <span class="pre">q</span> <span class="pre">\leq</span> <span class="pre">n-1}}</span> <span class="pre">f(q)</span> <span class="pre">\le</span> <span class="pre">n$</span></code> 显示：
-<span class="math notranslate nohighlight">\(\smash{\displaystyle\max_{0 \leq q \leq n-1}} f(q) \le n\)</span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">$f(x</span> <span class="pre">+</span> <span class="pre">\epsilon)</span> <span class="pre">\approx</span> <span class="pre">f(x)</span> <span class="pre">+</span> <span class="pre">f'(x)</span> <span class="pre">\epsilon</span> <span class="pre">+</span> <span class="pre">\mathcal{O}(\epsilon^2).$</span></code>, 显示:
-<span class="math notranslate nohighlight">\(f(x + \epsilon) \approx f(x) + f'(x) \epsilon + \mathcal{O}(\epsilon^2).\)</span></p></li>
-<li><p>求导符号使用 <code class="docutils literal notranslate"><span class="pre">$\text{d}x$</span></code>, 即：<span class="math notranslate nohighlight">\(\text{d}x\)</span></p></li>
-</ul>
-<p><a class="reference external" href="http://www.cnblogs.com/q735613050/p/7474449.html">Markdown公式（二）</a>以表格的形式列出了常用符号。</p>
-<p>更多内容参见<a class="reference external" href="https://www.zybuluo.com/codeep/note/163962">https://www.zybuluo.com/codeep/note/163962</a></p>
+</div>
+</div>
+<p>有时候要用 <code class="docutils literal notranslate"><span class="pre">\left.</span></code> 或 <code class="docutils literal notranslate"><span class="pre">\right.</span></code> 进行匹配而不显示本身。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">例</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$\left.</span> <span class="pre">\frac{</span> <span class="pre">{\rm</span> <span class="pre">d}u}{</span> <span class="pre">{\rm</span> <span class="pre">d}x}</span> <span class="pre">\right|</span> <span class="pre">_{x=0}$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\left. \frac{ {\rm d}u}{ {\rm d}x} \right| _{x=0}\]</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>偏导<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--5-input--1" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--1">例</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$\frac{\partial^{2}y}{\partial</span> <span class="pre">x^{2}}$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\frac{\partial^{2}y}{\partial x^{2}}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><strong>分数</strong><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>通常使用 <code class="docutils literal notranslate"><span class="pre">\frac</span> <span class="pre">{分子}</span> <span class="pre">{分母}</span></code> 命令产生一个分数 <span class="math notranslate nohighlight">\(\frac {分子} {分母}\)</span>，分数可嵌套。</p>
+<p>便捷情况可直接输入 <code class="docutils literal notranslate"><span class="pre">\frac</span> <span class="pre">ab</span></code> 来快速生成一个 <span class="math notranslate nohighlight">\(\frac ab\)</span>。如果分式很复杂，亦可使用 <code class="docutils literal notranslate"><span class="pre">分子</span> <span class="pre">\over</span> <span class="pre">分母</span></code> 命令，此时分数仅有一层。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">例 4</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$\frac{a-1}{b-1}</span> <span class="pre">\quad</span>&#160; <span class="pre">\text{and}</span>&#160; <span class="pre">\quad</span> <span class="pre">{a+1\over</span> <span class="pre">b+1}$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\frac{a-1}{b-1} \quad   \text{and}   \quad {a+1\over b+1}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2><strong>开方</strong><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">\sqrt</span> <span class="pre">[根指数，省略时为2]</span> <span class="pre">{被开方数}</span></code> 命令开方。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--7-input--1" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--1">例 5</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$\sqrt{2}</span> <span class="pre">\quad</span> <span class="pre">\text{and}</span> <span class="pre">\quad</span> <span class="pre">\sqrt[n]{3}$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--7-input--2" name="tab-set--7" type="radio"><label class="tab-label" for="tab-set--7-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\sqrt{2} \quad \text{and} \quad \sqrt[n]{3}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2><strong>省略号</strong><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>数学公式中常见的省略号有两种，<code class="docutils literal notranslate"><span class="pre">\ldots</span></code> 表示与文本底线对齐的省略号，<code class="docutils literal notranslate"><span class="pre">\cdots</span></code> 表示与文本中线对齐的省略号。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--8-input--1" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--1">例 6</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$f(x_1,x_2,\underbrace{\ldots}_{\rm</span> <span class="pre">ldots}</span> <span class="pre">,x_n)</span> <span class="pre">=</span> <span class="pre">x_1^2</span> <span class="pre">+</span> <span class="pre">x_2^2</span> <span class="pre">+</span> <span class="pre">\underbrace{\cdots}_{\rm</span> <span class="pre">cdots}</span> <span class="pre">+</span> <span class="pre">x_n^2$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--8-input--2" name="tab-set--8" type="radio"><label class="tab-label" for="tab-set--8-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}_{\rm cdots} + x_n^2\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2><strong>矢量</strong><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">\vec{矢量}</span></code> 来自动产生一个矢量。也可以使用 <code class="docutils literal notranslate"><span class="pre">\overrightarrow</span> </code> 等命令自定义字母上方的符号。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">例 7</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$\vec{a}</span> <span class="pre">\cdot</span> <span class="pre">\vec{b}=0$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\vec{a} \cdot \vec{b}=0\]</div>
+</div>
+</div>
+<p>或者</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">例 8</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$\overleftarrow{xy}</span> <span class="pre">\quad</span> <span class="pre">\text{and}</span> <span class="pre">\quad</span> <span class="pre">\overleftrightarrow{xy}</span> <span class="pre">\quad</span> <span class="pre">and</span> <span class="pre">\quad</span> <span class="pre">\overrightarrow{xy}$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\overleftarrow{xy} \quad \text{and} \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow{xy}\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><strong>积分</strong><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">\int_积分下限^积分上限</span> <span class="pre">{被积表达式}</span></code> 来输入一个积分。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">例 9</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$\int_0^1</span> <span class="pre">{x^2}</span> <span class="pre">\,{\rm</span> <span class="pre">d}x$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\int_0^1 {x^2} \,{\rm d}x\]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2><strong>极限</strong><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">\lim_{变量</span> <span class="pre">\to</span> <span class="pre">表达式}</span> <span class="pre">表达式</span></code> 来输入一个极限。如有需求，可以更改 <code class="docutils literal notranslate"><span class="pre">\to</span></code> 符号至任意符号。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">例 10</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$</span> <span class="pre">\lim_{n</span> <span class="pre">\to</span> <span class="pre">+\infty}</span> <span class="pre">\frac{1}{n(n+1)}</span> <span class="pre">\quad</span> <span class="pre">\text{and}</span> <span class="pre">\quad</span> <span class="pre">\lim_{x\leftarrow{示例}}</span> <span class="pre">\frac{1}{n(n+1)}</span> <span class="pre">$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--12-input--2" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[ \lim_{n \to +\infty} \frac{1}{n(n+1)} \quad \text{and} \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)} \]</div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><strong>累加、累乘</strong><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">\sum_{下标表达式}^{上标表达式}</span> <span class="pre">{累加表达式}</span></code> 来输入一个累加。与之类似，使用 <code class="docutils literal notranslate"><span class="pre">\prod</span> <span class="pre">\bigcup</span> <span class="pre">\bigcap</span></code> 来分别输入累乘、并集和交集。此类符号在行内显示时上下标表达式将会移至右上角和右下角。</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">例 11</label><div class="tab-content docutils">
+<p><code class="docutils literal notranslate"><span class="pre">$$\sum_{i=1}^n</span> <span class="pre">\frac{1}{i^2}</span> <span class="pre">\quad</span> <span class="pre">\text{and}</span> <span class="pre">\quad</span> <span class="pre">\prod_{i=1}^n</span> <span class="pre">\frac{1}{i^2}</span> <span class="pre">\quad</span> <span class="pre">\text{and}</span> <span class="pre">\quad</span> <span class="pre">\bigcup_{i=1}^{2}</span> <span class="pre">R$$</span></code></p>
+</div>
+<input class="tab-input" id="tab-set--13-input--2" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^n \frac{1}{i^2} \quad \text{and} \quad \prod_{i=1}^n \frac{1}{i^2} \quad \text{and} \quad \bigcup_{i=1}^{2} R\]</div>
+</div>
+</div>
 </div>
 <div class="section" id="id13">
-<h2>字体转换<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
-<p>若要对公式的某一部分字符进行字体转换，可以用 <code class="docutils literal notranslate"><span class="pre">{\字体</span> <span class="pre">{需转换的部分字符}}</span></code> 命令，其中 <code class="docutils literal notranslate"><span class="pre">\字体</span></code> 部分可以参照下表选择合适的字体。一般情况下，公式默认为意大利体.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>输入</p></th>
-<th class="text-align:center head"><p>说明</p></th>
-<th class="text-align:center head"><p>显示实例</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\rm</span></code></p></td>
-<td class="text-align:center"><p>罗马体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\({\rm D}\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\cal</span></code></p></td>
-<td class="text-align:center"><p>花体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\cal D\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\it</span></code></p></td>
-<td class="text-align:center"><p>意大利体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\it D\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\Bbb</span></code></p></td>
-<td class="text-align:center"><p>黑板粗体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\Bbb D\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\bf</span></code></p></td>
-<td class="text-align:center"><p>粗体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\bf D\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\mit</span></code></p></td>
-<td class="text-align:center"><p>数学斜体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\mit D\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\sf</span></code></p></td>
-<td class="text-align:center"><p>等线体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\sf D\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\scr</span></code></p></td>
-<td class="text-align:center"><p>手写体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\scr D\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\tt</span></code></p></td>
-<td class="text-align:center"><p>打字机体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\tt D\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\frak</span></code></p></td>
-<td class="text-align:center"><p>旧德式字体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frak D\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p><code class="docutils literal notranslate"><span class="pre">\boldsymbol</span></code></p></td>
-<td class="text-align:center"><p>黑体</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="id14">
-<h2>设定表格<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
-<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>$$
-\begin{array}{ccc|c}
-a11 &amp; a12 &amp; a13  &amp; b1 \\
-a21 &amp; a22  &amp; a23 &amp; b2  \\ 
-a31 &amp; a32  &amp; a33 &amp; b3  \\
-\end{array}
-$$
+<h2><strong>设定表格</strong><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--14-input--1" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--1">例 13</label><div class="tab-content docutils">
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\begin</span><span class="nb">{array}{ccc|c}</span>
+<span class="nb">a</span><span class="m">11</span><span class="nb"> &amp; a</span><span class="m">12</span><span class="nb"> &amp; a</span><span class="m">13</span><span class="nb">  &amp; b</span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">a</span><span class="m">21</span><span class="nb"> &amp; a</span><span class="m">22</span><span class="nb">  &amp; a</span><span class="m">23</span><span class="nb"> &amp; b</span><span class="m">2</span><span class="nb">  </span><span class="nv">\\</span><span class="nb"> </span>
+<span class="nb">a</span><span class="m">31</span><span class="nb"> &amp; a</span><span class="m">32</span><span class="nb">  &amp; a</span><span class="m">33</span><span class="nb"> &amp; b</span><span class="m">3</span><span class="nb">  </span><span class="nv">\\</span><span class="nb"></span>
+<span class="nv">\end</span><span class="nb">{array}</span>
+<span class="s">$$</span>
 </pre></div>
 </div>
-<p>显示：</p>
+</div>
+<input class="tab-input" id="tab-set--14-input--2" name="tab-set--14" type="radio"><label class="tab-label" for="tab-set--14-input--2">显示</label><div class="tab-content docutils">
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{ccc|c}
@@ -793,16 +678,118 @@ a21 &amp; a22  &amp; a23 &amp; b2  \\
 a31 &amp; a32  &amp; a33 &amp; b3  \\
 \end{array}
 \end{split}\]</div>
-<p>还可以表示 <code class="docutils literal notranslate"><span class="pre">$\LaTeX$</span></code> 为 ：<span class="math notranslate nohighlight">\(\LaTeX\)</span>。</p>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>对齐多行公式<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h2>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--15-input--1" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--1">例 14</label><div class="tab-content docutils">
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\begin</span><span class="nb">{aligned}</span>
+<span class="nb">a  &amp;</span><span class="o">=</span><span class="nb"> b^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> c^</span><span class="m">2</span><span class="nv">\\</span><span class="nb"></span>
+<span class="nb">&amp;</span><span class="o">=</span><span class="nb"> w^</span><span class="m">3</span><span class="nb"> </span><span class="o">+</span><span class="nb"> b</span>
+<span class="nv">\end</span><span class="nb">{aligned}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--15-input--2" name="tab-set--15" type="radio"><label class="tab-label" for="tab-set--15-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+a  &amp;= b^2 + c^2\\
+&amp;= w^3 + b
+\end{aligned}
+\end{split}\]</div>
+</div>
+</div>
 </div>
 <div class="section" id="id15">
 <h2>高亮<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">\bbox[底色,</span> <span class="pre">(可选)边距,</span> <span class="pre">(可选)边框</span> <span class="pre">border:</span> <span class="pre">框宽度</span> <span class="pre">框类型</span> <span class="pre">框颜色]</span></code> 命令来高亮一行公式。</p>
+<p>底色和框颜色支持详见“更改文字颜色”，边距及框宽度支持 绝对像素 <code class="docutils literal notranslate"><span class="pre">px</span></code> 或 相对大小 <code class="docutils literal notranslate"><span class="pre">em</span></code>，框类型支持 <code class="docutils literal notranslate"><span class="pre">实线</span></code> <code class="docutils literal notranslate"><span class="pre">solid</span></code> 或 <code class="docutils literal notranslate"><span class="pre">虚线</span></code> <code class="docutils literal notranslate"><span class="pre">dashed</span></code>。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-12 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--16-input--1" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--1">例</label><div class="tab-content docutils">
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\bbox</span><span class="o">[</span><span class="nb">yellow</span><span class="o">]</span><span class="nb">{</span>
+<span class="nb">    e^x</span><span class="o">=</span><span class="nv">\lim</span><span class="nb">_{n</span><span class="nv">\to\infty</span><span class="nb">} </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="m">1</span><span class="o">+</span><span class="nv">\frac</span><span class="nb">{x}{n} </span><span class="nv">\right</span><span class="o">)</span><span class="nb">^n </span><span class="nv">\qquad</span><span class="nb"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="nb"></span>
+<span class="nb">}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--16-input--2" name="tab-set--16" type="radio"><label class="tab-label" for="tab-set--16-input--2">显示</label><div class="tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \bbox[yellow]{
     e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)
 }
 \]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-12 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--17-input--1" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--1">例</label><div class="tab-content docutils">
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="nv">\bbox</span><span class="o">[</span><span class="nb">#</span><span class="m">9</span><span class="nb">ff, </span><span class="m">5</span><span class="nb">px</span><span class="o">]</span><span class="nb">{ </span><span class="c">% 此处向外添加 5 像素的边距</span>
+<span class="nb">    e^x</span><span class="o">=</span><span class="nv">\lim</span><span class="nb">_{n</span><span class="nv">\to\infty</span><span class="nb">} </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="m">1</span><span class="o">+</span><span class="nv">\frac</span><span class="nb">{x}{n} </span><span class="nv">\right</span><span class="o">)</span><span class="nb">^n </span><span class="nv">\qquad</span><span class="nb"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="nb"></span>
+<span class="nb">}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--17-input--2" name="tab-set--17" type="radio"><label class="tab-label" for="tab-set--17-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+\bbox[#9ff, 5px]{ % 此处向外添加 5 像素的边距
+    e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)
+}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-12 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--18-input--1" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--1">例</label><div class="tab-content docutils">
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">$$</span><span class="nb"></span>
+<span class="c">% 此处使用 0.5 倍行高作为边距，附加 2 像素的实线边框（Ctrl+Alt+Y 可见）</span>
+<span class="nv">\bbox</span><span class="o">[</span><span class="nb">#</span><span class="m">2</span><span class="nb">f</span><span class="m">3542</span><span class="nb">, </span><span class="m">0</span><span class="nb">.</span><span class="m">5</span><span class="nb">em, border:</span><span class="m">2</span><span class="nb">px solid #f</span><span class="m">1</span><span class="nb">f</span><span class="m">2</span><span class="nb">f</span><span class="m">6</span><span class="o">]</span><span class="nb">{</span>
+<span class="nb">    </span><span class="nv">\color</span><span class="nb">{#f</span><span class="m">1</span><span class="nb">f</span><span class="m">2</span><span class="nb">f</span><span class="m">6</span><span class="nb">}{e^x</span><span class="o">=</span><span class="nv">\lim</span><span class="nb">_{n</span><span class="nv">\to\infty</span><span class="nb">} </span><span class="nv">\left</span><span class="o">(</span><span class="nb"> </span><span class="m">1</span><span class="o">+</span><span class="nv">\frac</span><span class="nb">{x}{n} </span><span class="nv">\right</span><span class="o">)</span><span class="nb">^n </span><span class="nv">\qquad</span><span class="nb"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="nb">}</span>
+<span class="nb">}</span>
+<span class="s">$$</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--18-input--2" name="tab-set--18" type="radio"><label class="tab-label" for="tab-set--18-input--2">显示</label><div class="tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+% 此处使用 0.5 倍行高作为边距，附加 2 像素的实线边框（Ctrl+Alt+Y 可见）
+\bbox[#2f3542, 0.5em, border:2px solid #f1f2f6]{
+    \color{#f1f2f6}{e^x=\lim_{n\to\infty} \left( 1+\frac{x}{n} \right)^n \qquad (1)}
+}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -841,10 +828,10 @@ a31 &amp; a32  &amp; a33 &amp; b3  \\
             <p class="prev-next-title">数学</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="raw.html" title="下一页 页">
+    <a class='right-next' id="next-link" href="special-symbols.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">未分类</p>
+        <p class="prev-next-title">特殊符号</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
