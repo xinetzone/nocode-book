@@ -6,7 +6,7 @@
 
 narrative
 math/index
-code
 glossary-todolist
+code
 mermaid
 ```
