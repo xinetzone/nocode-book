@@ -6,6 +6,7 @@
 :hidden:
 
 start/index
+mermaid/index
 ```
 
 # 索引与表格
