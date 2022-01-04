@@ -8,5 +8,4 @@ narrative
 math/index
 glossary-todolist
 code
-mermaid
 ```
