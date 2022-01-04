@@ -6,4 +6,5 @@
 intro
 flowcharts
 state-diagrams
+requirement-diagrams
 ```
