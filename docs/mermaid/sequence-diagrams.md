@@ -70,7 +70,7 @@ sequenceDiagram
 
 行为者可以有一个方便的标识符和一个描述性的标签。
 
-``
+```
 sequenceDiagram
     participant A as Alice
     participant J as John
