@@ -2,9 +2,7 @@
 
 ```{toctree}
 :maxdepth: 2
+:glob:
 
-intro
-flowcharts
-state-diagrams
-requirement-diagrams
+*
 ```

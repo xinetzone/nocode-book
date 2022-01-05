@@ -1,0 +1,2314 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>类图 &#8212; nocode-book 0.1 文档</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/default.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "xinetzone/nocode-book");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".cell"
+        const thebe_selector_input = ".cell_input div.highlight"
+        const thebe_selector_output = ".cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="实体关系图" href="entityRelationshipDiagram.html" />
+    <link rel="prev" title="Mermaid" href="index.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+     
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../posts/atom.xml"
+  title="Blog"
+/>
+ 
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">nocode-book 0.1 文档</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../start/index.html">
+   快速上手
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/narrative.html">
+     叙事
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../start/math/index.html">
+     数学
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../start/math/basic.html">
+       基础
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../start/math/special-symbols.html">
+       特殊符号
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../start/math/matrix.html">
+       矩阵
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../start/math/other.html">
+       其他
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/glossary-todolist.html">
+     术语与待办
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/code.html">
+     代码
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Mermaid
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     类图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="entityRelationshipDiagram.html">
+     实体关系图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples.html">
+     例子
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="flowcharts.html">
+     流程图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gantt.html">
+     甘特图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro.html">
+     简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pie.html">
+     饼图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="requirement-diagrams.html">
+     需求图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sequence-diagrams.html">
+     序列图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="state-diagrams.html">
+     状态图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="user-journey.html">
+     用户旅程图
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <div>
+版权所有 © 2021 <a href="https://xinetzone.github.io/">xinetzone</a></div>
+<div>由 <a href="https://ebp.jupyterbook.org/">EBP</a> 提供技术支持</div>
+
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="切换导航" aria-controls="site-navigation"
+                title="切换导航" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/mermaid/classDiagram.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xinetzone/nocode-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="源库"><i
+                    class="fab fa-github"></i>资料库</button></a>
+        <a class="issues-button"
+            href="https://github.com/xinetzone/nocode-book/issues/new?title=Issue%20on%20page%20%2Fmermaid/classDiagram.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="打开一个问题"><i class="fas fa-lightbulb"></i>公开的问题</button></a>
+        <a class="edit-button" href="https://github.com/xinetzone/nocode-book/edit/main/docs/mermaid/classDiagram.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="编辑这个页面"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 导航
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   语法
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       class
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   定义
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     class
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   定义 class 的成员
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     返回类型
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     通用类型
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     返回类型
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     可见性
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   定义关系
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     关系中的标签
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-way">
+     Two-way 关系
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cardinality-multiplicity">
+   关系上的 cardinality / Multiplicity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   class 注解
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   设置图表的方向
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   交互性
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     示例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   风格
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node">
+     node 格式化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     默认风格
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stylesheet">
+       stylesheet 样例
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>类图</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> 导航 </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   语法
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       class
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   定义
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     class
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   定义 class 的成员
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     返回类型
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     通用类型
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     返回类型
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     可见性
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   定义关系
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     关系中的标签
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-way">
+     Two-way 关系
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cardinality-multiplicity">
+   关系上的 cardinality / Multiplicity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id11">
+   class 注解
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   设置图表的方向
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id13">
+   交互性
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     示例
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   风格
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#node">
+     node 格式化
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     默认风格
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#stylesheet">
+       stylesheet 样例
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>类图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>“在软件工程中，统一建模语言（Unified Modeling Language，UML）中的类图是一种静态结构图，通过显示系统的类、它们的属性、操作（或方法）以及对象之间的关系来描述系统的结构。”
+—— 维基百科</p>
+</div></blockquote>
+<p>类图是面向对象建模的主要构建块。它用于应用程序结构的一般概念性建模，以及将模型转化为编程代码的详细建模。类图也可用于数据建模。类图中的类既代表了主要元素，也代表了应用程序中的交互，还代表了要编程的类。</p>
+<p>Mermaid 可以渲染类图。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">classDiagram</span>
+      <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Duck</span>
+      <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Fish</span>
+      <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Zebra</span>
+      <span class="n">Animal</span> <span class="p">:</span> <span class="o">+</span><span class="nb">int</span> <span class="n">age</span>
+      <span class="n">Animal</span> <span class="p">:</span> <span class="o">+</span><span class="n">String</span> <span class="n">gender</span>
+      <span class="n">Animal</span><span class="p">:</span> <span class="o">+</span><span class="n">isMammal</span><span class="p">()</span>
+      <span class="n">Animal</span><span class="p">:</span> <span class="o">+</span><span class="n">mate</span><span class="p">()</span>
+      <span class="k">class</span> <span class="nc">Duck</span><span class="p">{</span>
+          <span class="o">+</span><span class="n">String</span> <span class="n">beakColor</span>
+          <span class="o">+</span><span class="n">swim</span><span class="p">()</span>
+          <span class="o">+</span><span class="n">quack</span><span class="p">()</span>
+      <span class="p">}</span>
+      <span class="k">class</span> <span class="nc">Fish</span><span class="p">{</span>
+          <span class="o">-</span><span class="nb">int</span> <span class="n">sizeInFeet</span>
+          <span class="o">-</span><span class="n">canEat</span><span class="p">()</span>
+      <span class="p">}</span>
+      <span class="k">class</span> <span class="nc">Zebra</span><span class="p">{</span>
+          <span class="o">+</span><span class="nb">bool</span> <span class="n">is_wild</span>
+          <span class="o">+</span><span class="n">run</span><span class="p">()</span>
+      <span class="p">}</span>
+</pre></div>
+</div>
+<div class="mermaid">
+             classDiagram
+      Animal &lt;|-- Duck
+      Animal &lt;|-- Fish
+      Animal &lt;|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }
+        </div><div class="section" id="id2">
+<h2>语法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="class">
+<h3><code class="docutils literal notranslate"><span class="pre">class</span></code><a class="headerlink" href="#class" title="永久链接至标题">¶</a></h3>
+<p>UML 提供了表示类成员的机制，如属性和方法，以及关于它们的附加信息。</p>
+<p>图中一个类的单个实例包含三个隔层：</p>
+<ul class="simple">
+<li><p>最上面的一格包含了 class 的名称。它以粗体字打印并居中，第一个字母大写。它也可以包含描述该类性质的可选注释文本。</p></li>
+<li><p>中间部分包含该类的属性。它们是左对齐的，第一个字母是小写的。</p></li>
+<li><p>底部的隔间包含了该类可以执行的操作。它们也是左对齐的，第一个字母是小写的。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">BankAccount</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">String</span> <span class="n">owner</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">Bigdecimal</span> <span class="n">balance</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">withdrawl</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class BankAccount
+    BankAccount : +String owner
+    BankAccount : +Bigdecimal balance
+    BankAccount : +deposit(amount)
+    BankAccount : +withdrawl(amount)
+        </div></div>
+</div>
+<div class="section" id="id3">
+<h2>定义 <code class="docutils literal notranslate"><span class="pre">class</span></code><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>有两种方法定义 class：</p>
+<ul class="simple">
+<li><p>使用关键字 <strong>class</strong> 明确地定义一个类，如 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Animal</span></code>。这就定义了动物类</p></li>
+<li><p>通过它们之间的 <strong>关系</strong> 定义两个类 <code class="docutils literal notranslate"><span class="pre">Vehicle</span> <span class="pre">&lt;|--</span> <span class="pre">Car</span></code>。这就定义了两个类 Vehicle 和 Car，以及它们之间的关系。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">Animal</span>
+    <span class="n">Vehicle</span> <span class="o">&lt;|--</span> <span class="n">Car</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class Animal
+    Vehicle &lt;|-- Car
+        </div><p>命名规则：一个类的名称应该由字母数字（允许使用 unicode）和下划线字符组成。</p>
+</div>
+<div class="section" id="id4">
+<h2>定义 class 的成员<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>UML 提供了表示类成员的机制，如属性和方法，以及关于它们的额外信息。</p>
+<p>Mermaid 区分属性和函数/方法的依据是：是否有 <strong>括号</strong> <code class="docutils literal notranslate"><span class="pre">()</span></code> 存在。带有 <code class="docutils literal notranslate"><span class="pre">()</span></code> 的被视为函数/方法，而其他的被视为属性。</p>
+<p>有两种方法来定义类的成员，无论使用哪种语法来定义成员，其输出结果都是一样的。这两种不同的方式是：</p>
+<ul class="simple">
+<li><p>使用 <strong>:</strong> （冒号）跟在成员名称后面关联一个类的成员，对一次定义一个成员很有用。比如说：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">classDiagram</span>
+ <span class="k">class</span> <span class="nc">BankAccount</span>
+ <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">String</span> <span class="n">owner</span>
+ <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">BigDecimal</span> <span class="n">balance</span>
+ <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+ <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">withdrawal</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="mermaid">
+             classDiagram
+ class BankAccount
+ BankAccount : +String owner
+ BankAccount : +BigDecimal balance
+ BankAccount : +deposit(amount)
+ BankAccount : +withdrawal(amount)
+        </div><ul class="simple">
+<li><p>使用 <strong>{}</strong> 括号关联一个类的成员，成员在大括号内分组。适用于一次定义多个成员。例如：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">{</span>
+    <span class="o">+</span><span class="n">String</span> <span class="n">owner</span>
+    <span class="o">+</span><span class="n">BigDecimal</span> <span class="n">balance</span>
+    <span class="o">+</span><span class="n">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+    <span class="o">+</span><span class="n">withdrawl</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class BankAccount{
+    +String owner
+    +BigDecimal balance
+    +deposit(amount)
+    +withdrawl(amount)
+}
+        </div><div class="section" id="id5">
+<h3>返回类型<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>你可以选择在方法/函数定义的最后加上将被返回的数据类型（注意：在方法定义的最后一个 <code class="docutils literal notranslate"><span class="pre">)</span></code> 和返回类型之间必须有一个空格</p>
+<p>例子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">{</span>
+    <span class="o">+</span><span class="n">String</span> <span class="n">owner</span>
+    <span class="o">+</span><span class="n">BigDecimal</span> <span class="n">balance</span>
+    <span class="o">+</span><span class="n">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="nb">bool</span>
+    <span class="o">+</span><span class="n">withdrawl</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class BankAccount{
+    +String owner
+    +BigDecimal balance
+    +deposit(amount) bool
+    +withdrawl(amount) int
+}
+        </div></div>
+<div class="section" id="id6">
+<h3>通用类型<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>成员可以使用通用类型来定义，例如 <code class="docutils literal notranslate"><span class="pre">List&lt;int&gt;</span></code>，用于字段、参数和返回类型，方法是将类型括在 <code class="docutils literal notranslate"><span class="pre">~</span></code> （<strong>tilde</strong>）内。注意：目前不支持 <strong>嵌套的</strong> 类型声明（如  <code class="docutils literal notranslate"><span class="pre">List&lt;List&lt;int&gt;&gt;</span></code>）。</p>
+<p>这可以作为类定义方法的一部分来完成：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Square</span><span class="o">~</span><span class="n">Shape</span><span class="o">~</span><span class="p">{</span>
+    <span class="nb">int</span> <span class="nb">id</span>
+    <span class="n">List</span><span class="o">~</span><span class="nb">int</span><span class="o">~</span> <span class="n">position</span>
+    <span class="n">setPoints</span><span class="p">(</span><span class="n">List</span><span class="o">~</span><span class="nb">int</span><span class="o">~</span> <span class="n">points</span><span class="p">)</span>
+    <span class="n">getPoints</span><span class="p">()</span> <span class="n">List</span><span class="o">~</span><span class="nb">int</span><span class="o">~</span>
+<span class="p">}</span>
+
+<span class="n">Square</span> <span class="p">:</span> <span class="o">-</span><span class="n">List</span><span class="o">~</span><span class="n">string</span><span class="o">~</span> <span class="n">messages</span>
+<span class="n">Square</span> <span class="p">:</span> <span class="o">+</span><span class="n">setMessages</span><span class="p">(</span><span class="n">List</span><span class="o">~</span><span class="n">string</span><span class="o">~</span> <span class="n">messages</span><span class="p">)</span>
+<span class="n">Square</span> <span class="p">:</span> <span class="o">+</span><span class="n">getMessages</span><span class="p">()</span> <span class="n">List</span><span class="o">~</span><span class="n">string</span><span class="o">~</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class Square~Shape~{
+    int id
+    List~int~ position
+    setPoints(List~int~ points)
+    getPoints() List~int~
+}
+
+Square : -List~string~ messages
+Square : +setMessages(List~string~ messages)
+Square : +getMessages() List~string~
+        </div></div>
+<div class="section" id="id7">
+<h3>返回类型<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>你可以选择用将被返回的数据类型来结束方法/函数定义。</p>
+</div>
+<div class="section" id="id8">
+<h3>可见性<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>为了指定一个类成员（即任何属性或方法）的可见性，这些符号可以放在该成员的名称之前，但这是可选的。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Public</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Private</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> Protected</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> Package/Internal</p></li>
+</ul>
+<blockquote>
+<div><p><em>注意</em> 你也可以在方法定义中加入额外的 <em>classifiers</em>，方法的结尾处，即：在 <code class="docutils literal notranslate"><span class="pre">()</span></code> 的后面加入以下符号：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> Abstract e.g.: <code class="docutils literal notranslate"><span class="pre">someAbstractMethod()*</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span></code> Static e.g.: <code class="docutils literal notranslate"><span class="pre">someStaticMethod()$</span></code></p></li>
+</ul>
+</div></blockquote>
+<blockquote>
+<div><p><em>注意</em> 你也可以在字段定义中加入额外的 <em>classifiers</em>，方法是在字段名的末尾加入以下说明：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span></code> Static e.g.: <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">someField$</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>定义关系<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>关系是一个一般的术语，涵盖了在类图和对象图上发现的特定类型的逻辑连接。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">classA</span><span class="p">][</span><span class="n">Arrow</span><span class="p">][</span><span class="n">ClassB</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>在 UML 下有不同类型的关系定义，目前支持的是类：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt;|–</p></td>
+<td><p>Inheritance</p></td>
+</tr>
+<tr class="row-odd"><td><p>*–</p></td>
+<td><p>Composition</p></td>
+</tr>
+<tr class="row-even"><td><p>o–</p></td>
+<td><p>Aggregation</p></td>
+</tr>
+<tr class="row-odd"><td><p>–&gt;</p></td>
+<td><p>Association</p></td>
+</tr>
+<tr class="row-even"><td><p>–</p></td>
+<td><p>Link (Solid)</p></td>
+</tr>
+<tr class="row-odd"><td><p>…&gt;</p></td>
+<td><p>Dependency</p></td>
+</tr>
+<tr class="row-even"><td><p>…|&gt;</p></td>
+<td><p>Realization</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>Link (Dashed)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="n">classA</span> <span class="o">&lt;|--</span> <span class="n">classB</span>
+<span class="n">classC</span> <span class="o">*--</span> <span class="n">classD</span>
+<span class="n">classE</span> <span class="n">o</span><span class="o">--</span> <span class="n">classF</span>
+<span class="n">classG</span> <span class="o">&lt;--</span> <span class="n">classH</span>
+<span class="n">classI</span> <span class="o">--</span> <span class="n">classJ</span>
+<span class="n">classK</span> <span class="o">&lt;..</span> <span class="n">classL</span>
+<span class="n">classM</span> <span class="o">&lt;|..</span> <span class="n">classN</span>
+<span class="n">classO</span> <span class="o">..</span> <span class="n">classP</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+classA &lt;|-- classB
+classC *-- classD
+classE o-- classF
+classG &lt;-- classH
+classI -- classJ
+classK &lt;.. classL
+classM &lt;|.. classN
+classO .. classP
+        </div><p>我们可以用标签来描述两个类之间关系的性质。另外，箭头也可以用在相反的方向：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="n">classA</span> <span class="o">--|&gt;</span> <span class="n">classB</span> <span class="p">:</span> <span class="n">Inheritance</span>
+<span class="n">classC</span> <span class="o">--*</span> <span class="n">classD</span> <span class="p">:</span> <span class="n">Composition</span>
+<span class="n">classE</span> <span class="o">--</span><span class="n">o</span> <span class="n">classF</span> <span class="p">:</span> <span class="n">Aggregation</span>
+<span class="n">classG</span> <span class="o">--&gt;</span> <span class="n">classH</span> <span class="p">:</span> <span class="n">Association</span>
+<span class="n">classI</span> <span class="o">--</span> <span class="n">classJ</span> <span class="p">:</span> <span class="n">Link</span><span class="p">(</span><span class="n">Solid</span><span class="p">)</span>
+<span class="n">classK</span> <span class="o">..&gt;</span> <span class="n">classL</span> <span class="p">:</span> <span class="n">Dependency</span>
+<span class="n">classM</span> <span class="o">..|&gt;</span> <span class="n">classN</span> <span class="p">:</span> <span class="n">Realization</span>
+<span class="n">classO</span> <span class="o">..</span> <span class="n">classP</span> <span class="p">:</span> <span class="n">Link</span><span class="p">(</span><span class="n">Dashed</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+classA --|&gt; classB : Inheritance
+classC --* classD : Composition
+classE --o classF : Aggregation
+classG --&gt; classH : Association
+classI -- classJ : Link(Solid)
+classK ..&gt; classL : Dependency
+classM ..|&gt; classN : Realization
+classO .. classP : Link(Dashed)
+        </div><div class="section" id="id10">
+<h3>关系中的标签<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>可以为一个关系添加一个标签文本：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">classA</span><span class="p">][</span><span class="n">Arrow</span><span class="p">][</span><span class="n">ClassB</span><span class="p">]:</span><span class="n">LabelText</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="n">classA</span> <span class="o">&lt;|--</span> <span class="n">classB</span> <span class="p">:</span> <span class="n">implements</span>
+<span class="n">classC</span> <span class="o">*--</span> <span class="n">classD</span> <span class="p">:</span> <span class="n">composition</span>
+<span class="n">classE</span> <span class="n">o</span><span class="o">--</span> <span class="n">classF</span> <span class="p">:</span> <span class="n">association</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+classA &lt;|-- classB : implements
+classC *-- classD : composition
+classE o-- classF : association
+        </div></div>
+<div class="section" id="two-way">
+<h3>Two-way 关系<a class="headerlink" href="#two-way" title="永久链接至标题">¶</a></h3>
+<p>关系可以以多种方式进行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="n">Animal</span> <span class="o">&lt;|--|&gt;</span> <span class="n">Zebra</span>
+</pre></div>
+</div>
+<p>这是语法：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Relation</span> <span class="n">Type</span><span class="p">][</span><span class="n">Link</span><span class="p">][</span><span class="n">Relation</span> <span class="n">Type</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">Relation</span> <span class="pre">Type</span></code> 可以是以下之一：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt;|</p></td>
+<td><p>Inheritance</p></td>
+</tr>
+<tr class="row-odd"><td><p>*</p></td>
+<td><p>Composition</p></td>
+</tr>
+<tr class="row-even"><td><p>o</p></td>
+<td><p>Aggregation</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>Association</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;</p></td>
+<td><p>Association</p></td>
+</tr>
+<tr class="row-odd"><td><p>|&gt;</p></td>
+<td><p>Realization</p></td>
+</tr>
+</tbody>
+</table>
+<p>而 <code class="docutils literal notranslate"><span class="pre">Link</span></code> 可以是以下之一：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–</p></td>
+<td><p>Solid</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>Dashed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="cardinality-multiplicity">
+<h2>关系上的 cardinality / Multiplicity<a class="headerlink" href="#cardinality-multiplicity" title="永久链接至标题">¶</a></h2>
+<p>类图中的 Multiplicity 或 cardinality 表示一个类的实例与另一个类的一个实例相连的数量。例如，一个公司会有一个或多个雇员，但每个雇员只为一个公司工作。</p>
+<p>Multiplicity 符号被放在关联的两端附近。</p>
+<p>不同的 cardinality 选项是：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> 仅 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0..1</span></code> 0 或者 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1..*</span></code> 1 或更多</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> 许多</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> n {where n&gt;1}</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0..n</span></code> 0 到 n {where n&gt;1}</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1..n</span></code> 1 到 n {where n&gt;1}</p></li>
+</ul>
+<p>通过在给定的箭头之前（可选）和之后（可选）的引号 <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> 内放置心率文本，可以轻松地定义心率。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">classA</span><span class="p">]</span> <span class="s2">&quot;cardinality1&quot;</span> <span class="p">[</span><span class="n">Arrow</span><span class="p">]</span> <span class="s2">&quot;cardinality2&quot;</span> <span class="p">[</span><span class="n">ClassB</span><span class="p">]:</span><span class="n">LabelText</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="n">Customer</span> <span class="s2">&quot;1&quot;</span> <span class="o">--&gt;</span> <span class="s2">&quot;*&quot;</span> <span class="n">Ticket</span>
+    <span class="n">Student</span> <span class="s2">&quot;1&quot;</span> <span class="o">--&gt;</span> <span class="s2">&quot;1..*&quot;</span> <span class="n">Course</span>
+    <span class="n">Galaxy</span> <span class="o">--&gt;</span> <span class="s2">&quot;many&quot;</span> <span class="n">Star</span> <span class="p">:</span> <span class="n">Contains</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    Customer &quot;1&quot; --&gt; &quot;*&quot; Ticket
+    Student &quot;1&quot; --&gt; &quot;1..*&quot; Course
+    Galaxy --&gt; &quot;many&quot; Star : Contains
+        </div></div>
+<div class="section" id="id11">
+<h2>class 注解<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>可以用特定的标记文本来注释类，这就像类的元数据，清楚地表明其性质。一些常见的注释例子可以是：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;Interface&gt;&gt;</span></code> 代表一个接口类</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;abstract&gt;&gt;</span></code> 代表一个抽象类。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;Service&gt;&gt;</span></code> 代表一个服务类</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;enumeration&gt;&gt;</span></code> 代表一个枚举类</p></li>
+</ul>
+<p>注释被定义在开头的 <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> 和结尾的 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 中。有两种方法可以为一个类添加注解，无论使用何种语法，输出都是一样的。这两种方法是：</p>
+<ul class="simple">
+<li><p>在定义了一个类之后的 <strong><em>separate line</em></strong>。比如说：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Shape</span>
+<span class="o">&lt;&lt;</span><span class="n">interface</span><span class="o">&gt;&gt;</span> <span class="n">Shape</span>
+<span class="n">Shape</span> <span class="p">:</span> <span class="n">noOfVertices</span>
+<span class="n">Shape</span> <span class="p">:</span> <span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class Shape
+&lt;&lt;interface&gt;&gt; Shape
+Shape : noOfVertices
+Shape : draw()
+        </div><ul class="simple">
+<li><p>在一个 <strong><em>嵌套结构中</em></strong> 与类定义一起。比如说：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Shape</span><span class="p">{</span>
+    <span class="o">&lt;&lt;</span><span class="n">interface</span><span class="o">&gt;&gt;</span>
+    <span class="n">noOfVertices</span>
+    <span class="n">draw</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">Color</span><span class="p">{</span>
+    <span class="o">&lt;&lt;</span><span class="n">enumeration</span><span class="o">&gt;&gt;</span>
+    <span class="n">RED</span>
+    <span class="n">BLUE</span>
+    <span class="n">GREEN</span>
+    <span class="n">WHITE</span>
+    <span class="n">BLACK</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class Shape{
+    &lt;&lt;interface&gt;&gt;
+    noOfVertices
+    draw()
+}
+class Color{
+    &lt;&lt;enumeration&gt;&gt;
+    RED
+    BLUE
+    GREEN
+    WHITE
+    BLACK
+}
+        </div></div>
+<div class="section" id="id12">
+<h2>设置图表的方向<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<p>对于类图，你可以使用方向语句来设置图表的渲染方向，就像本例中一样。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+  <span class="n">direction</span> <span class="n">RL</span>
+  <span class="k">class</span> <span class="nc">Student</span> <span class="p">{</span>
+    <span class="o">-</span><span class="n">idCard</span> <span class="p">:</span> <span class="n">IdCard</span>
+  <span class="p">}</span>
+  <span class="k">class</span> <span class="nc">IdCard</span><span class="p">{</span>
+    <span class="o">-</span><span class="nb">id</span> <span class="p">:</span> <span class="nb">int</span>
+    <span class="o">-</span><span class="n">name</span> <span class="p">:</span> <span class="n">string</span>
+  <span class="p">}</span>
+  <span class="k">class</span> <span class="nc">Bike</span><span class="p">{</span>
+    <span class="o">-</span><span class="nb">id</span> <span class="p">:</span> <span class="nb">int</span>
+    <span class="o">-</span><span class="n">name</span> <span class="p">:</span> <span class="n">string</span>
+  <span class="p">}</span>
+  <span class="n">Student</span> <span class="s2">&quot;1&quot;</span> <span class="o">--</span><span class="n">o</span> <span class="s2">&quot;1&quot;</span> <span class="n">IdCard</span> <span class="p">:</span> <span class="n">carries</span>
+  <span class="n">Student</span> <span class="s2">&quot;1&quot;</span> <span class="o">--</span><span class="n">o</span> <span class="s2">&quot;1&quot;</span> <span class="n">Bike</span> <span class="p">:</span> <span class="n">rides</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+  direction RL
+  class Student {
+    -idCard : IdCard
+  }
+  class IdCard{
+    -id : int
+    -name : string
+  }
+  class Bike{
+    -id : int
+    -name : string
+  }
+  Student &quot;1&quot; --o &quot;1&quot; IdCard : carries
+  Student &quot;1&quot; --o &quot;1&quot; Bike : rides
+        </div></div>
+<div class="section" id="id13">
+<h2>交互性<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<p>可以为一个节点绑定一个点击事件，点击可以导致一个 javascript 回调或一个将在新的浏览器标签中打开的链接。<strong>注意</strong>: 当使用 <code class="docutils literal notranslate"><span class="pre">securityLevel='strict'</span></code> 时，该功能被禁用，而当使用 <code class="docutils literal notranslate"><span class="pre">securityLevel='loose'</span></code> 时，则被启用。</p>
+<p>你可以在所有的类都被声明后，在单独的一行中定义这些动作。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="n">className</span> <span class="s2">&quot;reference&quot;</span> <span class="s2">&quot;tooltip&quot;</span>
+<span class="n">click</span> <span class="n">className</span> <span class="n">call</span> <span class="n">callback</span><span class="p">()</span> <span class="s2">&quot;tooltip&quot;</span>
+<span class="n">click</span> <span class="n">className</span> <span class="n">href</span> <span class="s2">&quot;url&quot;</span> <span class="s2">&quot;tooltip&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>action</em> 是 <code class="docutils literal notranslate"><span class="pre">link</span></code> 或 <code class="docutils literal notranslate"><span class="pre">callback</span></code>，取决于你想调用哪种类型的交互。</p></li>
+<li><p><em>className</em> 是动作将与之相关的节点的 id。</p></li>
+<li><p><em>reference</em> 是 url 链接，或者是回调的函数名。</p></li>
+<li><p>(<em>optional</em>) tooltip 是一个字符串，当悬停在元素上时显示（注意：工具提示的样式由类 .mermaidTooltip 设置。）</p></li>
+<li><p>注意：回调函数将以 nodeId 为参数被调用。</p></li>
+</ul>
+<div class="section" id="id14">
+<h3>示例<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p><em>URL Link:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Shape</span>
+<span class="n">link</span> <span class="n">Shape</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a tooltip for a link&quot;</span>
+<span class="k">class</span> <span class="nc">Shape2</span>
+<span class="n">click</span> <span class="n">Shape2</span> <span class="n">href</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a tooltip for a link&quot;</span>
+</pre></div>
+</div>
+<p><em>Callback:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Shape</span>
+<span class="n">callback</span> <span class="n">Shape</span> <span class="s2">&quot;callbackFunction&quot;</span> <span class="s2">&quot;This is a tooltip for a callback&quot;</span>
+<span class="k">class</span> <span class="nc">Shape2</span>
+<span class="n">click</span> <span class="n">Shape2</span> <span class="n">call</span> <span class="n">callbackFunction</span><span class="p">()</span> <span class="s2">&quot;This is a tooltip for a callback&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">var</span> <span class="nx">callbackFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        alert(&#39;A callback was triggered&#39;);
+    }
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">Class01</span>
+    <span class="k">class</span> <span class="nc">Class02</span>
+    <span class="n">callback</span> <span class="n">Class01</span> <span class="s2">&quot;callbackFunction&quot;</span> <span class="s2">&quot;Callback tooltip&quot;</span>
+    <span class="n">link</span> <span class="n">Class02</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a link&quot;</span>
+    <span class="k">class</span> <span class="nc">Class03</span>
+    <span class="k">class</span> <span class="nc">Class04</span>
+    <span class="n">click</span> <span class="n">Class03</span> <span class="n">call</span> <span class="n">callbackFunction</span><span class="p">()</span> <span class="s2">&quot;Callback tooltip&quot;</span>
+    <span class="n">click</span> <span class="n">Class04</span> <span class="n">href</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a link&quot;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Success</strong> The tooltip functionality and the ability to link to urls are available from version 0.5.2.</p>
+</div></blockquote>
+<p>Beginners tip, a full example using interactive links in an html context:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;mermaid&quot;</span><span class="o">&gt;</span>
+    <span class="n">classDiagram</span>
+    <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Duck</span>
+    <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Fish</span>
+    <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Zebra</span>
+    <span class="n">Animal</span> <span class="p">:</span> <span class="o">+</span><span class="nb">int</span> <span class="n">age</span>
+    <span class="n">Animal</span> <span class="p">:</span> <span class="o">+</span><span class="n">String</span> <span class="n">gender</span>
+    <span class="n">Animal</span><span class="p">:</span> <span class="o">+</span><span class="n">isMammal</span><span class="p">()</span>
+    <span class="n">Animal</span><span class="p">:</span> <span class="o">+</span><span class="n">mate</span><span class="p">()</span>
+    <span class="k">class</span> <span class="nc">Duck</span><span class="p">{</span>
+      <span class="o">+</span><span class="n">String</span> <span class="n">beakColor</span>
+      <span class="o">+</span><span class="n">swim</span><span class="p">()</span>
+      <span class="o">+</span><span class="n">quack</span><span class="p">()</span>
+      <span class="p">}</span>
+    <span class="k">class</span> <span class="nc">Fish</span><span class="p">{</span>
+      <span class="o">-</span><span class="nb">int</span> <span class="n">sizeInFeet</span>
+      <span class="o">-</span><span class="n">canEat</span><span class="p">()</span>
+      <span class="p">}</span>
+    <span class="k">class</span> <span class="nc">Zebra</span><span class="p">{</span>
+      <span class="o">+</span><span class="nb">bool</span> <span class="n">is_wild</span>
+      <span class="o">+</span><span class="n">run</span><span class="p">()</span>
+      <span class="p">}</span>
+
+      <span class="n">callback</span> <span class="n">Duck</span> <span class="n">callback</span> <span class="s2">&quot;Tooltip&quot;</span>
+      <span class="n">link</span> <span class="n">Zebra</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a link&quot;</span>
+  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">var</span> <span class="n">callback</span> <span class="o">=</span> <span class="n">function</span><span class="p">(){</span>
+        <span class="n">alert</span><span class="p">(</span><span class="s1">&#39;A callback was triggered&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">startOnLoad</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+      <span class="n">securityLevel</span><span class="p">:</span><span class="s1">&#39;loose&#39;</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="n">mermaid</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+  <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>风格<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<div class="section" id="node">
+<h3>node 格式化<a class="headerlink" href="#node" title="永久链接至标题">¶</a></h3>
+<p>它可以应用特定的样式，如更厚的边框或不同的背景颜色给单个节点。这是通过在css样式中预先定义类来实现的，可以从图的定义中应用，如下面的例子：</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nc">cssClass</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">rect</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">fill</span><span class="p">:</span><span class="mh">#FF0000</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">stroke</span><span class="p">:</span><span class="mh">#FFFF00</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">stroke-width</span><span class="p">:</span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>然后按照下面的方法将该类附加到一个特定的节点：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cssClass</span> <span class="s2">&quot;nodeId1&quot;</span> <span class="n">cssClass</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>也可以在一条语句中把一个类附加到一个节点的列表上：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cssClass</span> <span class="s2">&quot;nodeId1,nodeId2&quot;</span> <span class="n">cssClass</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>添加类的一个较短的形式是使用 <code class="docutils literal notranslate"><span class="pre">:::</span></code> 操作符将类名附加到节点上，如下所示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">Animal</span><span class="p">:::</span><span class="n">cssClass</span>
+</pre></div>
+</div>
+<p>或者：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">Animal</span><span class="p">:::</span><span class="n">cssClass</span> <span class="p">{</span>
+        <span class="o">-</span><span class="nb">int</span> <span class="n">sizeInFeet</span>
+        <span class="o">-</span><span class="n">canEat</span><span class="p">()</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>cssClasses 不能与关系语句同时使用这个速记方法来添加。</p></li>
+<li><p>由于现有的类图标记的限制，目前不可能在类图中定义 css 类。</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>默认风格<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>类图的主要造型是通过预设的 css 类完成的。在渲染过程中，这些类从位于 src/themes/class.scss 的文件中提取。这里使用的类描述如下。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>g.classGroup text</p></td>
+<td><p>Styles for general class text</p></td>
+</tr>
+<tr class="row-odd"><td><p>classGroup .title</p></td>
+<td><p>Styles for general class title</p></td>
+</tr>
+<tr class="row-even"><td><p>g.classGroup rect</p></td>
+<td><p>Styles for class diagram rectangle</p></td>
+</tr>
+<tr class="row-odd"><td><p>g.classGroup line</p></td>
+<td><p>Styles for class diagram line</p></td>
+</tr>
+<tr class="row-even"><td><p>.classLabel .box</p></td>
+<td><p>Styles for class label box</p></td>
+</tr>
+<tr class="row-odd"><td><p>.classLabel .label</p></td>
+<td><p>Styles for class label text</p></td>
+</tr>
+<tr class="row-even"><td><p>composition</p></td>
+<td><p>Styles for composition arrow head and arrow line</p></td>
+</tr>
+<tr class="row-odd"><td><p>aggregation</p></td>
+<td><p>Styles for aggregation arrow head and arrow line(dashed or solid)</p></td>
+</tr>
+<tr class="row-even"><td><p>dependency</p></td>
+<td><p>Styles for dependency arrow head and arrow line</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="stylesheet">
+<h4>stylesheet 样例<a class="headerlink" href="#stylesheet" title="永久链接至标题">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>body {
+    background: white;
+}
+
+g.classGroup text {
+    fill: $nodeBorder;
+    stroke: none;
+    font-family: &#39;trebuchet ms&#39;, verdana, arial;
+    font-family: var(--mermaid-font-family);
+    font-size: 10px;
+
+    .title {
+        font-weight: bolder;
+    }
+}
+
+g.classGroup rect {
+    fill: $nodeBkg;
+    stroke: $nodeBorder;
+}
+
+g.classGroup line {
+    stroke: $nodeBorder;
+    stroke-width: 1;
+}
+
+.classLabel .box {
+    stroke: none;
+    stroke-width: 0;
+    fill: $nodeBkg;
+    opacity: 0.5;
+}
+
+.classLabel .label {
+    fill: $nodeBorder;
+    font-size: 10px;
+}
+
+.relation {
+    stroke: $nodeBorder;
+    stroke-width: 1;
+    fill: none;
+}
+
+@mixin composition {
+    fill: $nodeBorder;
+    stroke: $nodeBorder;
+    stroke-width: 1;
+}
+
+#compositionStart {
+    @include composition;
+}
+
+#compositionEnd {
+    @include composition;
+}
+
+@mixin aggregation {
+    fill: $nodeBkg;
+    stroke: $nodeBorder;
+    stroke-width: 1;
+}
+
+#aggregationStart {
+    @include aggregation;
+}
+
+#aggregationEnd {
+    @include aggregation;
+}
+
+#dependencyStart {
+    @include composition;
+}
+
+#dependencyEnd {
+    @include composition;
+}
+
+#extensionStart {
+    @include composition;
+}
+
+#extensionEnd {
+    @include composition;
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/nocode-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./mermaid"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>类图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>“在软件工程中，统一建模语言（Unified Modeling Language，UML）中的类图是一种静态结构图，通过显示系统的类、它们的属性、操作（或方法）以及对象之间的关系来描述系统的结构。”
+—— 维基百科</p>
+</div></blockquote>
+<p>类图是面向对象建模的主要构建块。它用于应用程序结构的一般概念性建模，以及将模型转化为编程代码的详细建模。类图也可用于数据建模。类图中的类既代表了主要元素，也代表了应用程序中的交互，还代表了要编程的类。</p>
+<p>Mermaid 可以渲染类图。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">classDiagram</span>
+      <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Duck</span>
+      <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Fish</span>
+      <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Zebra</span>
+      <span class="n">Animal</span> <span class="p">:</span> <span class="o">+</span><span class="nb">int</span> <span class="n">age</span>
+      <span class="n">Animal</span> <span class="p">:</span> <span class="o">+</span><span class="n">String</span> <span class="n">gender</span>
+      <span class="n">Animal</span><span class="p">:</span> <span class="o">+</span><span class="n">isMammal</span><span class="p">()</span>
+      <span class="n">Animal</span><span class="p">:</span> <span class="o">+</span><span class="n">mate</span><span class="p">()</span>
+      <span class="k">class</span> <span class="nc">Duck</span><span class="p">{</span>
+          <span class="o">+</span><span class="n">String</span> <span class="n">beakColor</span>
+          <span class="o">+</span><span class="n">swim</span><span class="p">()</span>
+          <span class="o">+</span><span class="n">quack</span><span class="p">()</span>
+      <span class="p">}</span>
+      <span class="k">class</span> <span class="nc">Fish</span><span class="p">{</span>
+          <span class="o">-</span><span class="nb">int</span> <span class="n">sizeInFeet</span>
+          <span class="o">-</span><span class="n">canEat</span><span class="p">()</span>
+      <span class="p">}</span>
+      <span class="k">class</span> <span class="nc">Zebra</span><span class="p">{</span>
+          <span class="o">+</span><span class="nb">bool</span> <span class="n">is_wild</span>
+          <span class="o">+</span><span class="n">run</span><span class="p">()</span>
+      <span class="p">}</span>
+</pre></div>
+</div>
+<div class="mermaid">
+             classDiagram
+      Animal &lt;|-- Duck
+      Animal &lt;|-- Fish
+      Animal &lt;|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }
+        </div><div class="section" id="id2">
+<h2>语法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="class">
+<h3><code class="docutils literal notranslate"><span class="pre">class</span></code><a class="headerlink" href="#class" title="永久链接至标题">¶</a></h3>
+<p>UML 提供了表示类成员的机制，如属性和方法，以及关于它们的附加信息。</p>
+<p>图中一个类的单个实例包含三个隔层：</p>
+<ul class="simple">
+<li><p>最上面的一格包含了 class 的名称。它以粗体字打印并居中，第一个字母大写。它也可以包含描述该类性质的可选注释文本。</p></li>
+<li><p>中间部分包含该类的属性。它们是左对齐的，第一个字母是小写的。</p></li>
+<li><p>底部的隔间包含了该类可以执行的操作。它们也是左对齐的，第一个字母是小写的。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">BankAccount</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">String</span> <span class="n">owner</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">Bigdecimal</span> <span class="n">balance</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+    <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">withdrawl</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class BankAccount
+    BankAccount : +String owner
+    BankAccount : +Bigdecimal balance
+    BankAccount : +deposit(amount)
+    BankAccount : +withdrawl(amount)
+        </div></div>
+</div>
+<div class="section" id="id3">
+<h2>定义 <code class="docutils literal notranslate"><span class="pre">class</span></code><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>有两种方法定义 class：</p>
+<ul class="simple">
+<li><p>使用关键字 <strong>class</strong> 明确地定义一个类，如 <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Animal</span></code>。这就定义了动物类</p></li>
+<li><p>通过它们之间的 <strong>关系</strong> 定义两个类 <code class="docutils literal notranslate"><span class="pre">Vehicle</span> <span class="pre">&lt;|--</span> <span class="pre">Car</span></code>。这就定义了两个类 Vehicle 和 Car，以及它们之间的关系。</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">Animal</span>
+    <span class="n">Vehicle</span> <span class="o">&lt;|--</span> <span class="n">Car</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    class Animal
+    Vehicle &lt;|-- Car
+        </div><p>命名规则：一个类的名称应该由字母数字（允许使用 unicode）和下划线字符组成。</p>
+</div>
+<div class="section" id="id4">
+<h2>定义 class 的成员<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>UML 提供了表示类成员的机制，如属性和方法，以及关于它们的额外信息。</p>
+<p>Mermaid 区分属性和函数/方法的依据是：是否有 <strong>括号</strong> <code class="docutils literal notranslate"><span class="pre">()</span></code> 存在。带有 <code class="docutils literal notranslate"><span class="pre">()</span></code> 的被视为函数/方法，而其他的被视为属性。</p>
+<p>有两种方法来定义类的成员，无论使用哪种语法来定义成员，其输出结果都是一样的。这两种不同的方式是：</p>
+<ul class="simple">
+<li><p>使用 <strong>:</strong> （冒号）跟在成员名称后面关联一个类的成员，对一次定义一个成员很有用。比如说：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">classDiagram</span>
+ <span class="k">class</span> <span class="nc">BankAccount</span>
+ <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">String</span> <span class="n">owner</span>
+ <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">BigDecimal</span> <span class="n">balance</span>
+ <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+ <span class="n">BankAccount</span> <span class="p">:</span> <span class="o">+</span><span class="n">withdrawal</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="mermaid">
+             classDiagram
+ class BankAccount
+ BankAccount : +String owner
+ BankAccount : +BigDecimal balance
+ BankAccount : +deposit(amount)
+ BankAccount : +withdrawal(amount)
+        </div><ul class="simple">
+<li><p>使用 <strong>{}</strong> 括号关联一个类的成员，成员在大括号内分组。适用于一次定义多个成员。例如：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">{</span>
+    <span class="o">+</span><span class="n">String</span> <span class="n">owner</span>
+    <span class="o">+</span><span class="n">BigDecimal</span> <span class="n">balance</span>
+    <span class="o">+</span><span class="n">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+    <span class="o">+</span><span class="n">withdrawl</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class BankAccount{
+    +String owner
+    +BigDecimal balance
+    +deposit(amount)
+    +withdrawl(amount)
+}
+        </div><div class="section" id="id5">
+<h3>返回类型<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>你可以选择在方法/函数定义的最后加上将被返回的数据类型（注意：在方法定义的最后一个 <code class="docutils literal notranslate"><span class="pre">)</span></code> 和返回类型之间必须有一个空格</p>
+<p>例子：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">BankAccount</span><span class="p">{</span>
+    <span class="o">+</span><span class="n">String</span> <span class="n">owner</span>
+    <span class="o">+</span><span class="n">BigDecimal</span> <span class="n">balance</span>
+    <span class="o">+</span><span class="n">deposit</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="nb">bool</span>
+    <span class="o">+</span><span class="n">withdrawl</span><span class="p">(</span><span class="n">amount</span><span class="p">)</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class BankAccount{
+    +String owner
+    +BigDecimal balance
+    +deposit(amount) bool
+    +withdrawl(amount) int
+}
+        </div></div>
+<div class="section" id="id6">
+<h3>通用类型<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>成员可以使用通用类型来定义，例如 <code class="docutils literal notranslate"><span class="pre">List&lt;int&gt;</span></code>，用于字段、参数和返回类型，方法是将类型括在 <code class="docutils literal notranslate"><span class="pre">~</span></code> （<strong>tilde</strong>）内。注意：目前不支持 <strong>嵌套的</strong> 类型声明（如  <code class="docutils literal notranslate"><span class="pre">List&lt;List&lt;int&gt;&gt;</span></code>）。</p>
+<p>这可以作为类定义方法的一部分来完成：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Square</span><span class="o">~</span><span class="n">Shape</span><span class="o">~</span><span class="p">{</span>
+    <span class="nb">int</span> <span class="nb">id</span>
+    <span class="n">List</span><span class="o">~</span><span class="nb">int</span><span class="o">~</span> <span class="n">position</span>
+    <span class="n">setPoints</span><span class="p">(</span><span class="n">List</span><span class="o">~</span><span class="nb">int</span><span class="o">~</span> <span class="n">points</span><span class="p">)</span>
+    <span class="n">getPoints</span><span class="p">()</span> <span class="n">List</span><span class="o">~</span><span class="nb">int</span><span class="o">~</span>
+<span class="p">}</span>
+
+<span class="n">Square</span> <span class="p">:</span> <span class="o">-</span><span class="n">List</span><span class="o">~</span><span class="n">string</span><span class="o">~</span> <span class="n">messages</span>
+<span class="n">Square</span> <span class="p">:</span> <span class="o">+</span><span class="n">setMessages</span><span class="p">(</span><span class="n">List</span><span class="o">~</span><span class="n">string</span><span class="o">~</span> <span class="n">messages</span><span class="p">)</span>
+<span class="n">Square</span> <span class="p">:</span> <span class="o">+</span><span class="n">getMessages</span><span class="p">()</span> <span class="n">List</span><span class="o">~</span><span class="n">string</span><span class="o">~</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class Square~Shape~{
+    int id
+    List~int~ position
+    setPoints(List~int~ points)
+    getPoints() List~int~
+}
+
+Square : -List~string~ messages
+Square : +setMessages(List~string~ messages)
+Square : +getMessages() List~string~
+        </div></div>
+<div class="section" id="id7">
+<h3>返回类型<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>你可以选择用将被返回的数据类型来结束方法/函数定义。</p>
+</div>
+<div class="section" id="id8">
+<h3>可见性<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>为了指定一个类成员（即任何属性或方法）的可见性，这些符号可以放在该成员的名称之前，但这是可选的。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Public</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Private</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> Protected</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">~</span></code> Package/Internal</p></li>
+</ul>
+<blockquote>
+<div><p><em>注意</em> 你也可以在方法定义中加入额外的 <em>classifiers</em>，方法的结尾处，即：在 <code class="docutils literal notranslate"><span class="pre">()</span></code> 的后面加入以下符号：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> Abstract e.g.: <code class="docutils literal notranslate"><span class="pre">someAbstractMethod()*</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span></code> Static e.g.: <code class="docutils literal notranslate"><span class="pre">someStaticMethod()$</span></code></p></li>
+</ul>
+</div></blockquote>
+<blockquote>
+<div><p><em>注意</em> 你也可以在字段定义中加入额外的 <em>classifiers</em>，方法是在字段名的末尾加入以下说明：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span></code> Static e.g.: <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">someField$</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>定义关系<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>关系是一个一般的术语，涵盖了在类图和对象图上发现的特定类型的逻辑连接。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">classA</span><span class="p">][</span><span class="n">Arrow</span><span class="p">][</span><span class="n">ClassB</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>在 UML 下有不同类型的关系定义，目前支持的是类：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt;|–</p></td>
+<td><p>Inheritance</p></td>
+</tr>
+<tr class="row-odd"><td><p>*–</p></td>
+<td><p>Composition</p></td>
+</tr>
+<tr class="row-even"><td><p>o–</p></td>
+<td><p>Aggregation</p></td>
+</tr>
+<tr class="row-odd"><td><p>–&gt;</p></td>
+<td><p>Association</p></td>
+</tr>
+<tr class="row-even"><td><p>–</p></td>
+<td><p>Link (Solid)</p></td>
+</tr>
+<tr class="row-odd"><td><p>…&gt;</p></td>
+<td><p>Dependency</p></td>
+</tr>
+<tr class="row-even"><td><p>…|&gt;</p></td>
+<td><p>Realization</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>Link (Dashed)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="n">classA</span> <span class="o">&lt;|--</span> <span class="n">classB</span>
+<span class="n">classC</span> <span class="o">*--</span> <span class="n">classD</span>
+<span class="n">classE</span> <span class="n">o</span><span class="o">--</span> <span class="n">classF</span>
+<span class="n">classG</span> <span class="o">&lt;--</span> <span class="n">classH</span>
+<span class="n">classI</span> <span class="o">--</span> <span class="n">classJ</span>
+<span class="n">classK</span> <span class="o">&lt;..</span> <span class="n">classL</span>
+<span class="n">classM</span> <span class="o">&lt;|..</span> <span class="n">classN</span>
+<span class="n">classO</span> <span class="o">..</span> <span class="n">classP</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+classA &lt;|-- classB
+classC *-- classD
+classE o-- classF
+classG &lt;-- classH
+classI -- classJ
+classK &lt;.. classL
+classM &lt;|.. classN
+classO .. classP
+        </div><p>我们可以用标签来描述两个类之间关系的性质。另外，箭头也可以用在相反的方向：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="n">classA</span> <span class="o">--|&gt;</span> <span class="n">classB</span> <span class="p">:</span> <span class="n">Inheritance</span>
+<span class="n">classC</span> <span class="o">--*</span> <span class="n">classD</span> <span class="p">:</span> <span class="n">Composition</span>
+<span class="n">classE</span> <span class="o">--</span><span class="n">o</span> <span class="n">classF</span> <span class="p">:</span> <span class="n">Aggregation</span>
+<span class="n">classG</span> <span class="o">--&gt;</span> <span class="n">classH</span> <span class="p">:</span> <span class="n">Association</span>
+<span class="n">classI</span> <span class="o">--</span> <span class="n">classJ</span> <span class="p">:</span> <span class="n">Link</span><span class="p">(</span><span class="n">Solid</span><span class="p">)</span>
+<span class="n">classK</span> <span class="o">..&gt;</span> <span class="n">classL</span> <span class="p">:</span> <span class="n">Dependency</span>
+<span class="n">classM</span> <span class="o">..|&gt;</span> <span class="n">classN</span> <span class="p">:</span> <span class="n">Realization</span>
+<span class="n">classO</span> <span class="o">..</span> <span class="n">classP</span> <span class="p">:</span> <span class="n">Link</span><span class="p">(</span><span class="n">Dashed</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+classA --|&gt; classB : Inheritance
+classC --* classD : Composition
+classE --o classF : Aggregation
+classG --&gt; classH : Association
+classI -- classJ : Link(Solid)
+classK ..&gt; classL : Dependency
+classM ..|&gt; classN : Realization
+classO .. classP : Link(Dashed)
+        </div><div class="section" id="id10">
+<h3>关系中的标签<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>可以为一个关系添加一个标签文本：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">classA</span><span class="p">][</span><span class="n">Arrow</span><span class="p">][</span><span class="n">ClassB</span><span class="p">]:</span><span class="n">LabelText</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="n">classA</span> <span class="o">&lt;|--</span> <span class="n">classB</span> <span class="p">:</span> <span class="n">implements</span>
+<span class="n">classC</span> <span class="o">*--</span> <span class="n">classD</span> <span class="p">:</span> <span class="n">composition</span>
+<span class="n">classE</span> <span class="n">o</span><span class="o">--</span> <span class="n">classF</span> <span class="p">:</span> <span class="n">association</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+classA &lt;|-- classB : implements
+classC *-- classD : composition
+classE o-- classF : association
+        </div></div>
+<div class="section" id="two-way">
+<h3>Two-way 关系<a class="headerlink" href="#two-way" title="永久链接至标题">¶</a></h3>
+<p>关系可以以多种方式进行：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="n">Animal</span> <span class="o">&lt;|--|&gt;</span> <span class="n">Zebra</span>
+</pre></div>
+</div>
+<p>这是语法：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Relation</span> <span class="n">Type</span><span class="p">][</span><span class="n">Link</span><span class="p">][</span><span class="n">Relation</span> <span class="n">Type</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">Relation</span> <span class="pre">Type</span></code> 可以是以下之一：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt;|</p></td>
+<td><p>Inheritance</p></td>
+</tr>
+<tr class="row-odd"><td><p>*</p></td>
+<td><p>Composition</p></td>
+</tr>
+<tr class="row-even"><td><p>o</p></td>
+<td><p>Aggregation</p></td>
+</tr>
+<tr class="row-odd"><td><p>&gt;</p></td>
+<td><p>Association</p></td>
+</tr>
+<tr class="row-even"><td><p>&lt;</p></td>
+<td><p>Association</p></td>
+</tr>
+<tr class="row-odd"><td><p>|&gt;</p></td>
+<td><p>Realization</p></td>
+</tr>
+</tbody>
+</table>
+<p>而 <code class="docutils literal notranslate"><span class="pre">Link</span></code> 可以是以下之一：</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>–</p></td>
+<td><p>Solid</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>Dashed</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="cardinality-multiplicity">
+<h2>关系上的 cardinality / Multiplicity<a class="headerlink" href="#cardinality-multiplicity" title="永久链接至标题">¶</a></h2>
+<p>类图中的 Multiplicity 或 cardinality 表示一个类的实例与另一个类的一个实例相连的数量。例如，一个公司会有一个或多个雇员，但每个雇员只为一个公司工作。</p>
+<p>Multiplicity 符号被放在关联的两端附近。</p>
+<p>不同的 cardinality 选项是：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> 仅 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0..1</span></code> 0 或者 1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1..*</span></code> 1 或更多</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> 许多</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> n {where n&gt;1}</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">0..n</span></code> 0 到 n {where n&gt;1}</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1..n</span></code> 1 到 n {where n&gt;1}</p></li>
+</ul>
+<p>通过在给定的箭头之前（可选）和之后（可选）的引号 <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> 内放置心率文本，可以轻松地定义心率。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">classA</span><span class="p">]</span> <span class="s2">&quot;cardinality1&quot;</span> <span class="p">[</span><span class="n">Arrow</span><span class="p">]</span> <span class="s2">&quot;cardinality2&quot;</span> <span class="p">[</span><span class="n">ClassB</span><span class="p">]:</span><span class="n">LabelText</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="n">Customer</span> <span class="s2">&quot;1&quot;</span> <span class="o">--&gt;</span> <span class="s2">&quot;*&quot;</span> <span class="n">Ticket</span>
+    <span class="n">Student</span> <span class="s2">&quot;1&quot;</span> <span class="o">--&gt;</span> <span class="s2">&quot;1..*&quot;</span> <span class="n">Course</span>
+    <span class="n">Galaxy</span> <span class="o">--&gt;</span> <span class="s2">&quot;many&quot;</span> <span class="n">Star</span> <span class="p">:</span> <span class="n">Contains</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+    Customer &quot;1&quot; --&gt; &quot;*&quot; Ticket
+    Student &quot;1&quot; --&gt; &quot;1..*&quot; Course
+    Galaxy --&gt; &quot;many&quot; Star : Contains
+        </div></div>
+<div class="section" id="id11">
+<h2>class 注解<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>可以用特定的标记文本来注释类，这就像类的元数据，清楚地表明其性质。一些常见的注释例子可以是：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;Interface&gt;&gt;</span></code> 代表一个接口类</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;abstract&gt;&gt;</span></code> 代表一个抽象类。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;Service&gt;&gt;</span></code> 代表一个服务类</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;&lt;enumeration&gt;&gt;</span></code> 代表一个枚举类</p></li>
+</ul>
+<p>注释被定义在开头的 <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> 和结尾的 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> 中。有两种方法可以为一个类添加注解，无论使用何种语法，输出都是一样的。这两种方法是：</p>
+<ul class="simple">
+<li><p>在定义了一个类之后的 <strong><em>separate line</em></strong>。比如说：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Shape</span>
+<span class="o">&lt;&lt;</span><span class="n">interface</span><span class="o">&gt;&gt;</span> <span class="n">Shape</span>
+<span class="n">Shape</span> <span class="p">:</span> <span class="n">noOfVertices</span>
+<span class="n">Shape</span> <span class="p">:</span> <span class="n">draw</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class Shape
+&lt;&lt;interface&gt;&gt; Shape
+Shape : noOfVertices
+Shape : draw()
+        </div><ul class="simple">
+<li><p>在一个 <strong><em>嵌套结构中</em></strong> 与类定义一起。比如说：</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Shape</span><span class="p">{</span>
+    <span class="o">&lt;&lt;</span><span class="n">interface</span><span class="o">&gt;&gt;</span>
+    <span class="n">noOfVertices</span>
+    <span class="n">draw</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="k">class</span> <span class="nc">Color</span><span class="p">{</span>
+    <span class="o">&lt;&lt;</span><span class="n">enumeration</span><span class="o">&gt;&gt;</span>
+    <span class="n">RED</span>
+    <span class="n">BLUE</span>
+    <span class="n">GREEN</span>
+    <span class="n">WHITE</span>
+    <span class="n">BLACK</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+class Shape{
+    &lt;&lt;interface&gt;&gt;
+    noOfVertices
+    draw()
+}
+class Color{
+    &lt;&lt;enumeration&gt;&gt;
+    RED
+    BLUE
+    GREEN
+    WHITE
+    BLACK
+}
+        </div></div>
+<div class="section" id="id12">
+<h2>设置图表的方向<a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h2>
+<p>对于类图，你可以使用方向语句来设置图表的渲染方向，就像本例中一样。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+  <span class="n">direction</span> <span class="n">RL</span>
+  <span class="k">class</span> <span class="nc">Student</span> <span class="p">{</span>
+    <span class="o">-</span><span class="n">idCard</span> <span class="p">:</span> <span class="n">IdCard</span>
+  <span class="p">}</span>
+  <span class="k">class</span> <span class="nc">IdCard</span><span class="p">{</span>
+    <span class="o">-</span><span class="nb">id</span> <span class="p">:</span> <span class="nb">int</span>
+    <span class="o">-</span><span class="n">name</span> <span class="p">:</span> <span class="n">string</span>
+  <span class="p">}</span>
+  <span class="k">class</span> <span class="nc">Bike</span><span class="p">{</span>
+    <span class="o">-</span><span class="nb">id</span> <span class="p">:</span> <span class="nb">int</span>
+    <span class="o">-</span><span class="n">name</span> <span class="p">:</span> <span class="n">string</span>
+  <span class="p">}</span>
+  <span class="n">Student</span> <span class="s2">&quot;1&quot;</span> <span class="o">--</span><span class="n">o</span> <span class="s2">&quot;1&quot;</span> <span class="n">IdCard</span> <span class="p">:</span> <span class="n">carries</span>
+  <span class="n">Student</span> <span class="s2">&quot;1&quot;</span> <span class="o">--</span><span class="n">o</span> <span class="s2">&quot;1&quot;</span> <span class="n">Bike</span> <span class="p">:</span> <span class="n">rides</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            classDiagram
+  direction RL
+  class Student {
+    -idCard : IdCard
+  }
+  class IdCard{
+    -id : int
+    -name : string
+  }
+  class Bike{
+    -id : int
+    -name : string
+  }
+  Student &quot;1&quot; --o &quot;1&quot; IdCard : carries
+  Student &quot;1&quot; --o &quot;1&quot; Bike : rides
+        </div></div>
+<div class="section" id="id13">
+<h2>交互性<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<p>可以为一个节点绑定一个点击事件，点击可以导致一个 javascript 回调或一个将在新的浏览器标签中打开的链接。<strong>注意</strong>: 当使用 <code class="docutils literal notranslate"><span class="pre">securityLevel='strict'</span></code> 时，该功能被禁用，而当使用 <code class="docutils literal notranslate"><span class="pre">securityLevel='loose'</span></code> 时，则被启用。</p>
+<p>你可以在所有的类都被声明后，在单独的一行中定义这些动作。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="n">className</span> <span class="s2">&quot;reference&quot;</span> <span class="s2">&quot;tooltip&quot;</span>
+<span class="n">click</span> <span class="n">className</span> <span class="n">call</span> <span class="n">callback</span><span class="p">()</span> <span class="s2">&quot;tooltip&quot;</span>
+<span class="n">click</span> <span class="n">className</span> <span class="n">href</span> <span class="s2">&quot;url&quot;</span> <span class="s2">&quot;tooltip&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>action</em> 是 <code class="docutils literal notranslate"><span class="pre">link</span></code> 或 <code class="docutils literal notranslate"><span class="pre">callback</span></code>，取决于你想调用哪种类型的交互。</p></li>
+<li><p><em>className</em> 是动作将与之相关的节点的 id。</p></li>
+<li><p><em>reference</em> 是 url 链接，或者是回调的函数名。</p></li>
+<li><p>(<em>optional</em>) tooltip 是一个字符串，当悬停在元素上时显示（注意：工具提示的样式由类 .mermaidTooltip 设置。）</p></li>
+<li><p>注意：回调函数将以 nodeId 为参数被调用。</p></li>
+</ul>
+<div class="section" id="id14">
+<h3>示例<a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p><em>URL Link:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Shape</span>
+<span class="n">link</span> <span class="n">Shape</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a tooltip for a link&quot;</span>
+<span class="k">class</span> <span class="nc">Shape2</span>
+<span class="n">click</span> <span class="n">Shape2</span> <span class="n">href</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a tooltip for a link&quot;</span>
+</pre></div>
+</div>
+<p><em>Callback:</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+<span class="k">class</span> <span class="nc">Shape</span>
+<span class="n">callback</span> <span class="n">Shape</span> <span class="s2">&quot;callbackFunction&quot;</span> <span class="s2">&quot;This is a tooltip for a callback&quot;</span>
+<span class="k">class</span> <span class="nc">Shape2</span>
+<span class="n">click</span> <span class="n">Shape2</span> <span class="n">call</span> <span class="n">callbackFunction</span><span class="p">()</span> <span class="s2">&quot;This is a tooltip for a callback&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="kd">var</span> <span class="nx">callbackFunction</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+        alert(&#39;A callback was triggered&#39;);
+    }
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">Class01</span>
+    <span class="k">class</span> <span class="nc">Class02</span>
+    <span class="n">callback</span> <span class="n">Class01</span> <span class="s2">&quot;callbackFunction&quot;</span> <span class="s2">&quot;Callback tooltip&quot;</span>
+    <span class="n">link</span> <span class="n">Class02</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a link&quot;</span>
+    <span class="k">class</span> <span class="nc">Class03</span>
+    <span class="k">class</span> <span class="nc">Class04</span>
+    <span class="n">click</span> <span class="n">Class03</span> <span class="n">call</span> <span class="n">callbackFunction</span><span class="p">()</span> <span class="s2">&quot;Callback tooltip&quot;</span>
+    <span class="n">click</span> <span class="n">Class04</span> <span class="n">href</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a link&quot;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Success</strong> The tooltip functionality and the ability to link to urls are available from version 0.5.2.</p>
+</div></blockquote>
+<p>Beginners tip, a full example using interactive links in an html context:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;mermaid&quot;</span><span class="o">&gt;</span>
+    <span class="n">classDiagram</span>
+    <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Duck</span>
+    <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Fish</span>
+    <span class="n">Animal</span> <span class="o">&lt;|--</span> <span class="n">Zebra</span>
+    <span class="n">Animal</span> <span class="p">:</span> <span class="o">+</span><span class="nb">int</span> <span class="n">age</span>
+    <span class="n">Animal</span> <span class="p">:</span> <span class="o">+</span><span class="n">String</span> <span class="n">gender</span>
+    <span class="n">Animal</span><span class="p">:</span> <span class="o">+</span><span class="n">isMammal</span><span class="p">()</span>
+    <span class="n">Animal</span><span class="p">:</span> <span class="o">+</span><span class="n">mate</span><span class="p">()</span>
+    <span class="k">class</span> <span class="nc">Duck</span><span class="p">{</span>
+      <span class="o">+</span><span class="n">String</span> <span class="n">beakColor</span>
+      <span class="o">+</span><span class="n">swim</span><span class="p">()</span>
+      <span class="o">+</span><span class="n">quack</span><span class="p">()</span>
+      <span class="p">}</span>
+    <span class="k">class</span> <span class="nc">Fish</span><span class="p">{</span>
+      <span class="o">-</span><span class="nb">int</span> <span class="n">sizeInFeet</span>
+      <span class="o">-</span><span class="n">canEat</span><span class="p">()</span>
+      <span class="p">}</span>
+    <span class="k">class</span> <span class="nc">Zebra</span><span class="p">{</span>
+      <span class="o">+</span><span class="nb">bool</span> <span class="n">is_wild</span>
+      <span class="o">+</span><span class="n">run</span><span class="p">()</span>
+      <span class="p">}</span>
+
+      <span class="n">callback</span> <span class="n">Duck</span> <span class="n">callback</span> <span class="s2">&quot;Tooltip&quot;</span>
+      <span class="n">link</span> <span class="n">Zebra</span> <span class="s2">&quot;http://www.github.com&quot;</span> <span class="s2">&quot;This is a link&quot;</span>
+  <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+  <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span>
+    <span class="n">var</span> <span class="n">callback</span> <span class="o">=</span> <span class="n">function</span><span class="p">(){</span>
+        <span class="n">alert</span><span class="p">(</span><span class="s1">&#39;A callback was triggered&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="n">startOnLoad</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
+      <span class="n">securityLevel</span><span class="p">:</span><span class="s1">&#39;loose&#39;</span><span class="p">,</span>
+    <span class="p">};</span>
+
+    <span class="n">mermaid</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+  <span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>风格<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<div class="section" id="node">
+<h3>node 格式化<a class="headerlink" href="#node" title="永久链接至标题">¶</a></h3>
+<p>它可以应用特定的样式，如更厚的边框或不同的背景颜色给单个节点。这是通过在css样式中预先定义类来实现的，可以从图的定义中应用，如下面的例子：</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nc">cssClass</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="nt">rect</span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">fill</span><span class="p">:</span><span class="mh">#FF0000</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">stroke</span><span class="p">:</span><span class="mh">#FFFF00</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">stroke-width</span><span class="p">:</span><span class="mi">4</span><span class="kt">px</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>然后按照下面的方法将该类附加到一个特定的节点：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cssClass</span> <span class="s2">&quot;nodeId1&quot;</span> <span class="n">cssClass</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>也可以在一条语句中把一个类附加到一个节点的列表上：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">cssClass</span> <span class="s2">&quot;nodeId1,nodeId2&quot;</span> <span class="n">cssClass</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>添加类的一个较短的形式是使用 <code class="docutils literal notranslate"><span class="pre">:::</span></code> 操作符将类名附加到节点上，如下所示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">Animal</span><span class="p">:::</span><span class="n">cssClass</span>
+</pre></div>
+</div>
+<p>或者：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classDiagram</span>
+    <span class="k">class</span> <span class="nc">Animal</span><span class="p">:::</span><span class="n">cssClass</span> <span class="p">{</span>
+        <span class="o">-</span><span class="nb">int</span> <span class="n">sizeInFeet</span>
+        <span class="o">-</span><span class="n">canEat</span><span class="p">()</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>cssClasses 不能与关系语句同时使用这个速记方法来添加。</p></li>
+<li><p>由于现有的类图标记的限制，目前不可能在类图中定义 css 类。</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>默认风格<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>类图的主要造型是通过预设的 css 类完成的。在渲染过程中，这些类从位于 src/themes/class.scss 的文件中提取。这里使用的类描述如下。</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>g.classGroup text</p></td>
+<td><p>Styles for general class text</p></td>
+</tr>
+<tr class="row-odd"><td><p>classGroup .title</p></td>
+<td><p>Styles for general class title</p></td>
+</tr>
+<tr class="row-even"><td><p>g.classGroup rect</p></td>
+<td><p>Styles for class diagram rectangle</p></td>
+</tr>
+<tr class="row-odd"><td><p>g.classGroup line</p></td>
+<td><p>Styles for class diagram line</p></td>
+</tr>
+<tr class="row-even"><td><p>.classLabel .box</p></td>
+<td><p>Styles for class label box</p></td>
+</tr>
+<tr class="row-odd"><td><p>.classLabel .label</p></td>
+<td><p>Styles for class label text</p></td>
+</tr>
+<tr class="row-even"><td><p>composition</p></td>
+<td><p>Styles for composition arrow head and arrow line</p></td>
+</tr>
+<tr class="row-odd"><td><p>aggregation</p></td>
+<td><p>Styles for aggregation arrow head and arrow line(dashed or solid)</p></td>
+</tr>
+<tr class="row-even"><td><p>dependency</p></td>
+<td><p>Styles for dependency arrow head and arrow line</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="stylesheet">
+<h4>stylesheet 样例<a class="headerlink" href="#stylesheet" title="永久链接至标题">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>body {
+    background: white;
+}
+
+g.classGroup text {
+    fill: $nodeBorder;
+    stroke: none;
+    font-family: &#39;trebuchet ms&#39;, verdana, arial;
+    font-family: var(--mermaid-font-family);
+    font-size: 10px;
+
+    .title {
+        font-weight: bolder;
+    }
+}
+
+g.classGroup rect {
+    fill: $nodeBkg;
+    stroke: $nodeBorder;
+}
+
+g.classGroup line {
+    stroke: $nodeBorder;
+    stroke-width: 1;
+}
+
+.classLabel .box {
+    stroke: none;
+    stroke-width: 0;
+    fill: $nodeBkg;
+    opacity: 0.5;
+}
+
+.classLabel .label {
+    fill: $nodeBorder;
+    font-size: 10px;
+}
+
+.relation {
+    stroke: $nodeBorder;
+    stroke-width: 1;
+    fill: none;
+}
+
+@mixin composition {
+    fill: $nodeBorder;
+    stroke: $nodeBorder;
+    stroke-width: 1;
+}
+
+#compositionStart {
+    @include composition;
+}
+
+#compositionEnd {
+    @include composition;
+}
+
+@mixin aggregation {
+    fill: $nodeBkg;
+    stroke: $nodeBorder;
+    stroke-width: 1;
+}
+
+#aggregationStart {
+    @include aggregation;
+}
+
+#aggregationEnd {
+    @include aggregation;
+}
+
+#dependencyStart {
+    @include composition;
+}
+
+#dependencyEnd {
+    @include composition;
+}
+
+#extensionStart {
+    @include composition;
+}
+
+#extensionEnd {
+    @include composition;
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/nocode-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./mermaid"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+<div class="section">
+   
+</div>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="index.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">Mermaid</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="entityRelationshipDiagram.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">实体关系图</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      通过 xinetzone<br/>
+    
+        &copy; 版权 2021, xinetzone.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

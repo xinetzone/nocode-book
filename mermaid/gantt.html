@@ -1,0 +1,1054 @@
+
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>甘特图 &#8212; nocode-book 0.1 文档</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/default.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "xinetzone/nocode-book");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
+    <script src="../_static/translations.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".cell"
+        const thebe_selector_input = ".cell_input div.highlight"
+        const thebe_selector_output = ".cell_output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="简介" href="intro.html" />
+    <link rel="prev" title="流程图" href="flowcharts.html" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="zh_CN">
+    
+
+    <!-- Google Analytics -->
+     
+<link
+  rel="alternate"
+  type="application/atom+xml"
+  href="../posts/atom.xml"
+  title="Blog"
+/>
+ 
+<style type="text/css">
+  ul.ablog-archive {
+    list-style: none;
+    overflow: auto;
+    margin-left: 0px;
+  }
+  ul.ablog-archive li {
+    float: left;
+    margin-right: 5px;
+    font-size: 80%;
+  }
+  ul.postlist a {
+    font-style: italic;
+  }
+  ul.postlist-style-disc {
+    list-style-type: disc;
+  }
+  ul.postlist-style-none {
+    list-style-type: none;
+  }
+  ul.postlist-style-circle {
+    list-style-type: circle;
+  }
+</style>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">nocode-book 0.1 文档</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../start/index.html">
+   快速上手
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/narrative.html">
+     叙事
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../start/math/index.html">
+     数学
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../start/math/basic.html">
+       基础
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../start/math/special-symbols.html">
+       特殊符号
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../start/math/matrix.html">
+       矩阵
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../start/math/other.html">
+       其他
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/glossary-todolist.html">
+     术语与待办
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../start/code.html">
+     代码
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Mermaid
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="classDiagram.html">
+     类图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="entityRelationshipDiagram.html">
+     实体关系图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples.html">
+     例子
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="flowcharts.html">
+     流程图
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     甘特图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro.html">
+     简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pie.html">
+     饼图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="requirement-diagrams.html">
+     需求图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sequence-diagrams.html">
+     序列图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="state-diagrams.html">
+     状态图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="user-journey.html">
+     用户旅程图
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <div>
+版权所有 © 2021 <a href="https://xinetzone.github.io/">xinetzone</a></div>
+<div>由 <a href="https://ebp.jupyterbook.org/">EBP</a> 提供技术支持</div>
+
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="切换导航" aria-controls="site-navigation"
+                title="切换导航" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/mermaid/gantt.md.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/xinetzone/nocode-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="源库"><i
+                    class="fab fa-github"></i>资料库</button></a>
+        <a class="issues-button"
+            href="https://github.com/xinetzone/nocode-book/issues/new?title=Issue%20on%20page%20%2Fmermaid/gantt.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="打开一个问题"><i class="fas fa-lightbulb"></i>公开的问题</button></a>
+        <a class="edit-button" href="https://github.com/xinetzone/nocode-book/edit/main/docs/mermaid/gantt.md"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="编辑这个页面"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> 导航
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   给用户的说明
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   语法
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     标题
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     章节声明
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     里程碑
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   设置日期
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#date">
+     date 输入格式
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     在轴上输出日期格式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#today">
+   Today 标记
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>甘特图</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> 导航 </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   给用户的说明
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   语法
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     标题
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     章节声明
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     里程碑
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   设置日期
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#date">
+     date 输入格式
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     在轴上输出日期格式
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#today">
+   Today 标记
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>甘特图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>甘特图是一种条形图，由 Karol Adamiecki 在 1896 年首次开发，并由 Henry Gantt 在 1910 年代独立开发，说明了项目进度和任何一个项目完成所需的时间量。甘特图说明了一个项目的终端要素和摘要要素的开始和结束日期之间的天数。</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>给用户的说明<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>甘特图将把每个计划任务记录为一个连续的条形，从左边延伸到右边。X 轴代表时间，Y 轴记录不同的任务和它们完成的顺序。</p>
+<p>重要的是要记住，当一个任务的特定日期、日子或日期集合被 “排除” 时，甘特图将通过向右延伸相同数量的日子来适应这些变化，而不是在任务内部创建一个缺口。</p>
+<p>但是，如果被排除的日期在两个被设定为连续开始的任务之间，被排除的日期将被图形化地跳过，留出空白，下面的任务将在被排除日期结束后开始。</p>
+<p>甘特图对于跟踪一个项目完成前所需的时间非常有用，但它也可以用来用图形表示 “非工作日”，只需做一些调整。</p>
+<p>Mermaid 可以将甘特图呈现为 SVG、PNG 或 MarkDown 链接，可以粘贴到文档中。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gantt</span>
+    <span class="n">title</span> <span class="n">A</span> <span class="n">Gantt</span> <span class="n">Diagram</span>
+    <span class="n">dateFormat</span>  <span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span>
+    <span class="n">section</span> <span class="n">Section</span>
+    <span class="n">A</span> <span class="n">task</span>           <span class="p">:</span><span class="n">a1</span><span class="p">,</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span> <span class="mi">30</span><span class="n">d</span>
+    <span class="n">Another</span> <span class="n">task</span>     <span class="p">:</span><span class="n">after</span> <span class="n">a1</span>  <span class="p">,</span> <span class="mi">20</span><span class="n">d</span>
+    <span class="n">section</span> <span class="n">Another</span>
+    <span class="n">Task</span> <span class="ow">in</span> <span class="n">sec</span>      <span class="p">:</span><span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">12</span>  <span class="p">,</span> <span class="mi">12</span><span class="n">d</span>
+    <span class="n">another</span> <span class="n">task</span>      <span class="p">:</span> <span class="mi">24</span><span class="n">d</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
+        </div></div>
+<div class="section" id="id3">
+<h2>语法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gantt
+    dateFormat  YYYY-MM-DD
+    title       Adding GANTT diagram functionality to mermaid
+    excludes    weekends
+    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week (&quot;sunday&quot;) or &quot;weekends&quot;, but not the word &quot;weekdays&quot;.)
+
+    section A section
+    Completed task            :done,    des1, 2014-01-06,2014-01-08
+    Active task               :active,  des2, 2014-01-09, 3d
+    Future task               :         des3, after des2, 5d
+    Future task2              :         des4, after des3, 5d
+
+    section Critical tasks
+    Completed task in the critical line :crit, done, 2014-01-06,24h
+    Implement parser and jison          :crit, done, after des1, 2d
+    Create tests for parser             :crit, active, 3d
+    Future task in critical line        :crit, 5d
+    Create tests for renderer           :2d
+    Add to mermaid                      :1d
+    Functionality added                 :milestone, 2014-01-25, 0d
+
+    section Documentation
+    Describe gantt syntax               :active, a1, after des1, 3d
+    Add gantt diagram to demo page      :after a1  , 20h
+    Add another diagram to demo page    :doc1, after a1  , 48h
+
+    section Last section
+    Describe gantt syntax               :after doc1, 3d
+    Add gantt diagram to demo page      :20h
+    Add another diagram to demo page    :48h
+</pre></div>
+</div>
+<div class="mermaid">
+            gantt
+    dateFormat  YYYY-MM-DD
+    title       Adding GANTT diagram functionality to mermaid
+    excludes    weekends
+    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week (&quot;sunday&quot;) or &quot;weekends&quot;, but not the word &quot;weekdays&quot;.)
+
+    section A section
+    Completed task            :done,    des1, 2014-01-06,2014-01-08
+    Active task               :active,  des2, 2014-01-09, 3d
+    Future task               :         des3, after des2, 5d
+    Future task2              :         des4, after des3, 5d
+
+    section Critical tasks
+    Completed task in the critical line :crit, done, 2014-01-06,24h
+    Implement parser and jison          :crit, done, after des1, 2d
+    Create tests for parser             :crit, active, 3d
+    Future task in critical line        :crit, 5d
+    Create tests for renderer           :2d
+    Add to mermaid                      :1d
+    Functionality added                 :milestone, 2014-01-25, 0d
+
+    section Documentation
+    Describe gantt syntax               :active, a1, after des1, 3d
+    Add gantt diagram to demo page      :after a1  , 20h
+    Add another diagram to demo page    :doc1, after a1  , 48h
+
+    section Last section
+    Describe gantt syntax               :after doc1, 3d
+    Add gantt diagram to demo page      :20h
+    Add another diagram to demo page    :48h
+        </div><p>可以设置多个依赖关系，用空格隔开：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">gantt</span>
+        <span class="n">apple</span> <span class="p">:</span><span class="n">a</span><span class="p">,</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="n">w</span>
+        <span class="n">banana</span> <span class="p">:</span><span class="n">crit</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span><span class="p">,</span> <span class="mi">1</span><span class="n">d</span>
+        <span class="n">cherry</span> <span class="p">:</span><span class="n">active</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">after</span> <span class="n">b</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="n">d</span>
+</pre></div>
+</div>
+<div class="mermaid">
+                gantt
+        apple :a, 2017-07-20, 1w
+        banana :crit, b, 2017-07-23, 1d
+        cherry :active, c, after b a, 1d
+        </div><div class="section" id="id4">
+<h3>标题<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">title</span></code> 是一个 <em>可选的</em> 字符串，显示在甘特图的顶部，用来描述整个图表。</p>
+</div>
+<div class="section" id="id5">
+<h3>章节声明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>你可以将图表划分为不同的部分，例如将项目的不同部分如开发和文档分开。</p>
+<p>为此，用 <code class="docutils literal notranslate"><span class="pre">section</span></code> 关键字开始一行，并给它一个名字。（注意，与 <a class="reference external" href="#%E6%A0%87%E9%A2%98">整个图表的标题</a> 不同，这个名字是 <em>必须的</em>）。</p>
+</div>
+<div class="section" id="id6">
+<h3>里程碑<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>你可以在图表中添加里程碑。里程碑与任务不同，它们代表一个单一的时间点，并以关键字 <code class="docutils literal notranslate"><span class="pre">milestone</span></code> 来标识。下面是一个关于如何使用里程碑的例子。你可能会注意到，里程碑的确切位置是由里程碑的初始日期和任务的 “duration” 决定的，这种方式：<em>initial date</em>+<em>duration</em>/2。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gantt</span> 
+<span class="n">dateFormat</span> <span class="n">HH</span><span class="p">:</span><span class="n">mm</span>
+<span class="n">axisFormat</span> <span class="o">%</span><span class="n">H</span><span class="p">:</span><span class="o">%</span><span class="n">M</span>
+<span class="n">Initial</span> <span class="n">milestone</span> <span class="p">:</span> <span class="n">milestone</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="mi">17</span><span class="p">:</span><span class="mi">49</span><span class="p">,</span><span class="mi">2</span><span class="nb">min</span>
+<span class="n">taska2</span> <span class="p">:</span> <span class="mi">10</span><span class="nb">min</span>
+<span class="n">taska3</span> <span class="p">:</span> <span class="mi">5</span><span class="nb">min</span> 
+<span class="n">Final</span> <span class="n">milestone</span> <span class="p">:</span> <span class="n">milestone</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="mi">18</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="nb">min</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            gantt 
+dateFormat HH:mm
+axisFormat %H:%M
+Initial milestone : milestone, m1, 17:49,2min
+taska2 : 10min
+taska3 : 5min 
+Final milestone : milestone, m2, 18:14, 2min
+        </div></div>
+</div>
+<div class="section" id="id7">
+<h2>设置日期<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">dateFormat</span></code> 定义了你的甘特图元素的日期 <strong>input</strong> 的格式。这些日期如何在渲染的图表 <strong>output</strong> 中表示，由 <code class="docutils literal notranslate"><span class="pre">axisFormat</span></code> 定义。</p>
+<div class="section" id="date">
+<h3>date 输入格式<a class="headerlink" href="#date" title="永久链接至标题">¶</a></h3>
+<p>默认的输入日期格式是 <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>。你可以定义你的自定义 <code class="docutils literal notranslate"><span class="pre">dateFormat</span></code>。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dateFormat</span> <span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span>
+</pre></div>
+</div>
+<p>支持以下格式化选项：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span>       <span class="n">Example</span>             <span class="n">Description</span><span class="p">:</span>
+<span class="n">YYYY</span>        <span class="mi">2014</span>                <span class="mi">4</span> <span class="n">digit</span> <span class="n">year</span>
+<span class="n">YY</span>          <span class="mi">14</span>                  <span class="mi">2</span> <span class="n">digit</span> <span class="n">year</span>
+<span class="n">Q</span>           <span class="mf">1..4</span>                <span class="n">Quarter</span> <span class="n">of</span> <span class="n">year</span><span class="o">.</span> <span class="n">Sets</span> <span class="n">month</span> <span class="n">to</span> <span class="n">first</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">quarter</span><span class="o">.</span>
+<span class="n">M</span> <span class="n">MM</span>        <span class="mf">1..12</span>               <span class="n">Month</span> <span class="n">number</span>
+<span class="n">MMM</span> <span class="n">MMMM</span>    <span class="n">January</span><span class="o">..</span><span class="n">Dec</span>        <span class="n">Month</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">locale</span> <span class="nb">set</span> <span class="n">by</span> <span class="n">moment</span><span class="o">.</span><span class="n">locale</span><span class="p">()</span>
+<span class="n">D</span> <span class="n">DD</span>        <span class="mf">1..31</span>               <span class="n">Day</span> <span class="n">of</span> <span class="n">month</span>
+<span class="n">Do</span>          <span class="mi">1</span><span class="n">st</span><span class="o">.</span><span class="mf">.31</span><span class="n">st</span>           <span class="n">Day</span> <span class="n">of</span> <span class="n">month</span> <span class="k">with</span> <span class="n">ordinal</span>
+<span class="n">DDD</span> <span class="n">DDDD</span>    <span class="mf">1..365</span>              <span class="n">Day</span> <span class="n">of</span> <span class="n">year</span>
+<span class="n">X</span>           <span class="mf">1410715640.579</span>      <span class="n">Unix</span> <span class="n">timestamp</span>
+<span class="n">x</span>           <span class="mi">1410715640579</span>       <span class="n">Unix</span> <span class="n">ms</span> <span class="n">timestamp</span>
+<span class="n">H</span> <span class="n">HH</span>        <span class="mf">0..23</span>               <span class="mi">24</span> <span class="n">hour</span> <span class="n">time</span>
+<span class="n">h</span> <span class="n">hh</span>        <span class="mf">1..12</span>               <span class="mi">12</span> <span class="n">hour</span> <span class="n">time</span> <span class="n">used</span> <span class="k">with</span> <span class="n">a</span> <span class="n">A</span><span class="o">.</span>
+<span class="n">a</span> <span class="n">A</span>         <span class="n">am</span> <span class="n">pm</span>               <span class="n">Post</span> <span class="ow">or</span> <span class="n">ante</span> <span class="n">meridiem</span>
+<span class="n">m</span> <span class="n">mm</span>        <span class="mf">0..59</span>               <span class="n">Minutes</span>
+<span class="n">s</span> <span class="n">ss</span>        <span class="mf">0..59</span>               <span class="n">Seconds</span>
+<span class="n">S</span>           <span class="mf">0..9</span>                <span class="n">Tenths</span> <span class="n">of</span> <span class="n">a</span> <span class="n">second</span>
+<span class="n">SS</span>          <span class="mf">0..99</span>               <span class="n">Hundreds</span> <span class="n">of</span> <span class="n">a</span> <span class="n">second</span>
+<span class="n">SSS</span>         <span class="mf">0..999</span>              <span class="n">Thousandths</span> <span class="n">of</span> <span class="n">a</span> <span class="n">second</span>
+<span class="n">Z</span> <span class="n">ZZ</span>        <span class="o">+</span><span class="mi">12</span><span class="p">:</span><span class="mi">00</span>              <span class="n">Offset</span> <span class="kn">from</span> <span class="nn">UTC</span> <span class="k">as</span> <span class="o">+-</span><span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">,</span> <span class="o">+-</span><span class="n">HHmm</span><span class="p">,</span> <span class="ow">or</span> <span class="n">Z</span>
+</pre></div>
+</div>
+<p>更多信息见：http://momentjs.com/docs/#/parsing/string-format/</p>
+</div>
+<div class="section" id="id8">
+<h3>在轴上输出日期格式<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>默认的输出日期格式是 YYY-MM-DD。你可以定义你的自定义 <code class="docutils literal notranslate"><span class="pre">axisFormat</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">2020-Q1</span></code> 表示 2020 年的第一季度。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">axisFormat</span>  <span class="o">%</span><span class="n">Y</span><span class="o">-%</span><span class="n">m</span><span class="o">-%</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>支持以下格式化字符串：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">a</span> <span class="o">-</span> <span class="n">abbreviated</span> <span class="n">weekday</span> <span class="n">name</span><span class="o">.</span>
+<span class="o">%</span><span class="n">A</span> <span class="o">-</span> <span class="n">full</span> <span class="n">weekday</span> <span class="n">name</span><span class="o">.</span>
+<span class="o">%</span><span class="n">b</span> <span class="o">-</span> <span class="n">abbreviated</span> <span class="n">month</span> <span class="n">name</span><span class="o">.</span>
+<span class="o">%</span><span class="n">B</span> <span class="o">-</span> <span class="n">full</span> <span class="n">month</span> <span class="n">name</span><span class="o">.</span>
+<span class="o">%</span><span class="n">c</span> <span class="o">-</span> <span class="n">date</span> <span class="ow">and</span> <span class="n">time</span><span class="p">,</span> <span class="k">as</span> <span class="s2">&quot;</span><span class="si">%a</span><span class="s2"> %b </span><span class="si">%e</span><span class="s2"> %H:%M:%S %Y&quot;</span><span class="o">.</span>
+<span class="o">%</span><span class="n">d</span> <span class="o">-</span> <span class="n">zero</span><span class="o">-</span><span class="n">padded</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">month</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">01</span><span class="p">,</span><span class="mi">31</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">e</span> <span class="o">-</span> <span class="n">space</span><span class="o">-</span><span class="n">padded</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">month</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">];</span> <span class="n">equivalent</span> <span class="n">to</span> <span class="o">%</span><span class="n">_d</span><span class="o">.</span>
+<span class="o">%</span><span class="n">H</span> <span class="o">-</span> <span class="n">hour</span> <span class="p">(</span><span class="mi">24</span><span class="o">-</span><span class="n">hour</span> <span class="n">clock</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">23</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">I</span> <span class="o">-</span> <span class="n">hour</span> <span class="p">(</span><span class="mi">12</span><span class="o">-</span><span class="n">hour</span> <span class="n">clock</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">01</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">j</span> <span class="o">-</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">year</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">001</span><span class="p">,</span><span class="mi">366</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">m</span> <span class="o">-</span> <span class="n">month</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">01</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">M</span> <span class="o">-</span> <span class="n">minute</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">59</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">L</span> <span class="o">-</span> <span class="n">milliseconds</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">000</span><span class="p">,</span> <span class="mi">999</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">p</span> <span class="o">-</span> <span class="n">either</span> <span class="n">AM</span> <span class="ow">or</span> <span class="n">PM</span><span class="o">.</span>
+<span class="o">%</span><span class="n">S</span> <span class="o">-</span> <span class="n">second</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">61</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">U</span> <span class="o">-</span> <span class="n">week</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">year</span> <span class="p">(</span><span class="n">Sunday</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">53</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">w</span> <span class="o">-</span> <span class="n">weekday</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">0</span><span class="p">(</span><span class="n">Sunday</span><span class="p">),</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">W</span> <span class="o">-</span> <span class="n">week</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">year</span> <span class="p">(</span><span class="n">Monday</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">53</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">x</span> <span class="o">-</span> <span class="n">date</span><span class="p">,</span> <span class="k">as</span> <span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="o">.</span>
+<span class="o">%</span><span class="n">X</span> <span class="o">-</span> <span class="n">time</span><span class="p">,</span> <span class="k">as</span> <span class="s2">&quot;%H:%M:%S&quot;</span><span class="o">.</span>
+<span class="o">%</span><span class="n">y</span> <span class="o">-</span> <span class="n">year</span> <span class="n">without</span> <span class="n">century</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">99</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">Y</span> <span class="o">-</span> <span class="n">year</span> <span class="k">with</span> <span class="n">century</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span><span class="o">.</span>
+<span class="o">%</span><span class="n">Z</span> <span class="o">-</span> <span class="n">time</span> <span class="n">zone</span> <span class="n">offset</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="s2">&quot;-0700&quot;</span><span class="o">.</span>
+<span class="o">%%</span> <span class="o">-</span> <span class="n">a</span> <span class="n">literal</span> <span class="s2">&quot;%&quot;</span> <span class="n">character</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>更多信息见：https://github.com/mbostock/d3/wiki/Time-Formatting</p>
+</div>
+</div>
+<div class="section" id="today">
+<h2>Today 标记<a class="headerlink" href="#today" title="永久链接至标题">¶</a></h2>
+<p>你可以设计或隐藏当前日期的标记。要设计它，请为 <code class="docutils literal notranslate"><span class="pre">todayMarker</span></code> 键添加一个值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">todayMarker</span> <span class="n">stroke</span><span class="o">-</span><span class="n">width</span><span class="p">:</span><span class="mi">5</span><span class="n">px</span><span class="p">,</span><span class="n">stroke</span><span class="p">:</span><span class="c1">#0f0,opacity:0.5</span>
+</pre></div>
+</div>
+<p>要隐藏标记，将 <code class="docutils literal notranslate"><span class="pre">todayMarker</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">off</span></code>。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">todayMarker</span> <span class="n">off</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/nocode-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./mermaid"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>甘特图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>甘特图是一种条形图，由 Karol Adamiecki 在 1896 年首次开发，并由 Henry Gantt 在 1910 年代独立开发，说明了项目进度和任何一个项目完成所需的时间量。甘特图说明了一个项目的终端要素和摘要要素的开始和结束日期之间的天数。</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>给用户的说明<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>甘特图将把每个计划任务记录为一个连续的条形，从左边延伸到右边。X 轴代表时间，Y 轴记录不同的任务和它们完成的顺序。</p>
+<p>重要的是要记住，当一个任务的特定日期、日子或日期集合被 “排除” 时，甘特图将通过向右延伸相同数量的日子来适应这些变化，而不是在任务内部创建一个缺口。</p>
+<p>但是，如果被排除的日期在两个被设定为连续开始的任务之间，被排除的日期将被图形化地跳过，留出空白，下面的任务将在被排除日期结束后开始。</p>
+<p>甘特图对于跟踪一个项目完成前所需的时间非常有用，但它也可以用来用图形表示 “非工作日”，只需做一些调整。</p>
+<p>Mermaid 可以将甘特图呈现为 SVG、PNG 或 MarkDown 链接，可以粘贴到文档中。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gantt</span>
+    <span class="n">title</span> <span class="n">A</span> <span class="n">Gantt</span> <span class="n">Diagram</span>
+    <span class="n">dateFormat</span>  <span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span>
+    <span class="n">section</span> <span class="n">Section</span>
+    <span class="n">A</span> <span class="n">task</span>           <span class="p">:</span><span class="n">a1</span><span class="p">,</span> <span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">01</span><span class="p">,</span> <span class="mi">30</span><span class="n">d</span>
+    <span class="n">Another</span> <span class="n">task</span>     <span class="p">:</span><span class="n">after</span> <span class="n">a1</span>  <span class="p">,</span> <span class="mi">20</span><span class="n">d</span>
+    <span class="n">section</span> <span class="n">Another</span>
+    <span class="n">Task</span> <span class="ow">in</span> <span class="n">sec</span>      <span class="p">:</span><span class="mi">2014</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">12</span>  <span class="p">,</span> <span class="mi">12</span><span class="n">d</span>
+    <span class="n">another</span> <span class="n">task</span>      <span class="p">:</span> <span class="mi">24</span><span class="n">d</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
+        </div></div>
+<div class="section" id="id3">
+<h2>语法<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>gantt
+    dateFormat  YYYY-MM-DD
+    title       Adding GANTT diagram functionality to mermaid
+    excludes    weekends
+    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week (&quot;sunday&quot;) or &quot;weekends&quot;, but not the word &quot;weekdays&quot;.)
+
+    section A section
+    Completed task            :done,    des1, 2014-01-06,2014-01-08
+    Active task               :active,  des2, 2014-01-09, 3d
+    Future task               :         des3, after des2, 5d
+    Future task2              :         des4, after des3, 5d
+
+    section Critical tasks
+    Completed task in the critical line :crit, done, 2014-01-06,24h
+    Implement parser and jison          :crit, done, after des1, 2d
+    Create tests for parser             :crit, active, 3d
+    Future task in critical line        :crit, 5d
+    Create tests for renderer           :2d
+    Add to mermaid                      :1d
+    Functionality added                 :milestone, 2014-01-25, 0d
+
+    section Documentation
+    Describe gantt syntax               :active, a1, after des1, 3d
+    Add gantt diagram to demo page      :after a1  , 20h
+    Add another diagram to demo page    :doc1, after a1  , 48h
+
+    section Last section
+    Describe gantt syntax               :after doc1, 3d
+    Add gantt diagram to demo page      :20h
+    Add another diagram to demo page    :48h
+</pre></div>
+</div>
+<div class="mermaid">
+            gantt
+    dateFormat  YYYY-MM-DD
+    title       Adding GANTT diagram functionality to mermaid
+    excludes    weekends
+    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week (&quot;sunday&quot;) or &quot;weekends&quot;, but not the word &quot;weekdays&quot;.)
+
+    section A section
+    Completed task            :done,    des1, 2014-01-06,2014-01-08
+    Active task               :active,  des2, 2014-01-09, 3d
+    Future task               :         des3, after des2, 5d
+    Future task2              :         des4, after des3, 5d
+
+    section Critical tasks
+    Completed task in the critical line :crit, done, 2014-01-06,24h
+    Implement parser and jison          :crit, done, after des1, 2d
+    Create tests for parser             :crit, active, 3d
+    Future task in critical line        :crit, 5d
+    Create tests for renderer           :2d
+    Add to mermaid                      :1d
+    Functionality added                 :milestone, 2014-01-25, 0d
+
+    section Documentation
+    Describe gantt syntax               :active, a1, after des1, 3d
+    Add gantt diagram to demo page      :after a1  , 20h
+    Add another diagram to demo page    :doc1, after a1  , 48h
+
+    section Last section
+    Describe gantt syntax               :after doc1, 3d
+    Add gantt diagram to demo page      :20h
+    Add another diagram to demo page    :48h
+        </div><p>可以设置多个依赖关系，用空格隔开：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">gantt</span>
+        <span class="n">apple</span> <span class="p">:</span><span class="n">a</span><span class="p">,</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="n">w</span>
+        <span class="n">banana</span> <span class="p">:</span><span class="n">crit</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">07</span><span class="o">-</span><span class="mi">23</span><span class="p">,</span> <span class="mi">1</span><span class="n">d</span>
+        <span class="n">cherry</span> <span class="p">:</span><span class="n">active</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">after</span> <span class="n">b</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="n">d</span>
+</pre></div>
+</div>
+<div class="mermaid">
+                gantt
+        apple :a, 2017-07-20, 1w
+        banana :crit, b, 2017-07-23, 1d
+        cherry :active, c, after b a, 1d
+        </div><div class="section" id="id4">
+<h3>标题<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">title</span></code> 是一个 <em>可选的</em> 字符串，显示在甘特图的顶部，用来描述整个图表。</p>
+</div>
+<div class="section" id="id5">
+<h3>章节声明<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>你可以将图表划分为不同的部分，例如将项目的不同部分如开发和文档分开。</p>
+<p>为此，用 <code class="docutils literal notranslate"><span class="pre">section</span></code> 关键字开始一行，并给它一个名字。（注意，与 <a class="reference external" href="#%E6%A0%87%E9%A2%98">整个图表的标题</a> 不同，这个名字是 <em>必须的</em>）。</p>
+</div>
+<div class="section" id="id6">
+<h3>里程碑<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>你可以在图表中添加里程碑。里程碑与任务不同，它们代表一个单一的时间点，并以关键字 <code class="docutils literal notranslate"><span class="pre">milestone</span></code> 来标识。下面是一个关于如何使用里程碑的例子。你可能会注意到，里程碑的确切位置是由里程碑的初始日期和任务的 “duration” 决定的，这种方式：<em>initial date</em>+<em>duration</em>/2。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gantt</span> 
+<span class="n">dateFormat</span> <span class="n">HH</span><span class="p">:</span><span class="n">mm</span>
+<span class="n">axisFormat</span> <span class="o">%</span><span class="n">H</span><span class="p">:</span><span class="o">%</span><span class="n">M</span>
+<span class="n">Initial</span> <span class="n">milestone</span> <span class="p">:</span> <span class="n">milestone</span><span class="p">,</span> <span class="n">m1</span><span class="p">,</span> <span class="mi">17</span><span class="p">:</span><span class="mi">49</span><span class="p">,</span><span class="mi">2</span><span class="nb">min</span>
+<span class="n">taska2</span> <span class="p">:</span> <span class="mi">10</span><span class="nb">min</span>
+<span class="n">taska3</span> <span class="p">:</span> <span class="mi">5</span><span class="nb">min</span> 
+<span class="n">Final</span> <span class="n">milestone</span> <span class="p">:</span> <span class="n">milestone</span><span class="p">,</span> <span class="n">m2</span><span class="p">,</span> <span class="mi">18</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="nb">min</span>
+</pre></div>
+</div>
+<div class="mermaid">
+            gantt 
+dateFormat HH:mm
+axisFormat %H:%M
+Initial milestone : milestone, m1, 17:49,2min
+taska2 : 10min
+taska3 : 5min 
+Final milestone : milestone, m2, 18:14, 2min
+        </div></div>
+</div>
+<div class="section" id="id7">
+<h2>设置日期<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">dateFormat</span></code> 定义了你的甘特图元素的日期 <strong>input</strong> 的格式。这些日期如何在渲染的图表 <strong>output</strong> 中表示，由 <code class="docutils literal notranslate"><span class="pre">axisFormat</span></code> 定义。</p>
+<div class="section" id="date">
+<h3>date 输入格式<a class="headerlink" href="#date" title="永久链接至标题">¶</a></h3>
+<p>默认的输入日期格式是 <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>。你可以定义你的自定义 <code class="docutils literal notranslate"><span class="pre">dateFormat</span></code>。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dateFormat</span> <span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span>
+</pre></div>
+</div>
+<p>支持以下格式化选项：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Input</span>       <span class="n">Example</span>             <span class="n">Description</span><span class="p">:</span>
+<span class="n">YYYY</span>        <span class="mi">2014</span>                <span class="mi">4</span> <span class="n">digit</span> <span class="n">year</span>
+<span class="n">YY</span>          <span class="mi">14</span>                  <span class="mi">2</span> <span class="n">digit</span> <span class="n">year</span>
+<span class="n">Q</span>           <span class="mf">1..4</span>                <span class="n">Quarter</span> <span class="n">of</span> <span class="n">year</span><span class="o">.</span> <span class="n">Sets</span> <span class="n">month</span> <span class="n">to</span> <span class="n">first</span> <span class="n">month</span> <span class="ow">in</span> <span class="n">quarter</span><span class="o">.</span>
+<span class="n">M</span> <span class="n">MM</span>        <span class="mf">1..12</span>               <span class="n">Month</span> <span class="n">number</span>
+<span class="n">MMM</span> <span class="n">MMMM</span>    <span class="n">January</span><span class="o">..</span><span class="n">Dec</span>        <span class="n">Month</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">locale</span> <span class="nb">set</span> <span class="n">by</span> <span class="n">moment</span><span class="o">.</span><span class="n">locale</span><span class="p">()</span>
+<span class="n">D</span> <span class="n">DD</span>        <span class="mf">1..31</span>               <span class="n">Day</span> <span class="n">of</span> <span class="n">month</span>
+<span class="n">Do</span>          <span class="mi">1</span><span class="n">st</span><span class="o">.</span><span class="mf">.31</span><span class="n">st</span>           <span class="n">Day</span> <span class="n">of</span> <span class="n">month</span> <span class="k">with</span> <span class="n">ordinal</span>
+<span class="n">DDD</span> <span class="n">DDDD</span>    <span class="mf">1..365</span>              <span class="n">Day</span> <span class="n">of</span> <span class="n">year</span>
+<span class="n">X</span>           <span class="mf">1410715640.579</span>      <span class="n">Unix</span> <span class="n">timestamp</span>
+<span class="n">x</span>           <span class="mi">1410715640579</span>       <span class="n">Unix</span> <span class="n">ms</span> <span class="n">timestamp</span>
+<span class="n">H</span> <span class="n">HH</span>        <span class="mf">0..23</span>               <span class="mi">24</span> <span class="n">hour</span> <span class="n">time</span>
+<span class="n">h</span> <span class="n">hh</span>        <span class="mf">1..12</span>               <span class="mi">12</span> <span class="n">hour</span> <span class="n">time</span> <span class="n">used</span> <span class="k">with</span> <span class="n">a</span> <span class="n">A</span><span class="o">.</span>
+<span class="n">a</span> <span class="n">A</span>         <span class="n">am</span> <span class="n">pm</span>               <span class="n">Post</span> <span class="ow">or</span> <span class="n">ante</span> <span class="n">meridiem</span>
+<span class="n">m</span> <span class="n">mm</span>        <span class="mf">0..59</span>               <span class="n">Minutes</span>
+<span class="n">s</span> <span class="n">ss</span>        <span class="mf">0..59</span>               <span class="n">Seconds</span>
+<span class="n">S</span>           <span class="mf">0..9</span>                <span class="n">Tenths</span> <span class="n">of</span> <span class="n">a</span> <span class="n">second</span>
+<span class="n">SS</span>          <span class="mf">0..99</span>               <span class="n">Hundreds</span> <span class="n">of</span> <span class="n">a</span> <span class="n">second</span>
+<span class="n">SSS</span>         <span class="mf">0..999</span>              <span class="n">Thousandths</span> <span class="n">of</span> <span class="n">a</span> <span class="n">second</span>
+<span class="n">Z</span> <span class="n">ZZ</span>        <span class="o">+</span><span class="mi">12</span><span class="p">:</span><span class="mi">00</span>              <span class="n">Offset</span> <span class="kn">from</span> <span class="nn">UTC</span> <span class="k">as</span> <span class="o">+-</span><span class="n">HH</span><span class="p">:</span><span class="n">mm</span><span class="p">,</span> <span class="o">+-</span><span class="n">HHmm</span><span class="p">,</span> <span class="ow">or</span> <span class="n">Z</span>
+</pre></div>
+</div>
+<p>更多信息见：http://momentjs.com/docs/#/parsing/string-format/</p>
+</div>
+<div class="section" id="id8">
+<h3>在轴上输出日期格式<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>默认的输出日期格式是 YYY-MM-DD。你可以定义你的自定义 <code class="docutils literal notranslate"><span class="pre">axisFormat</span></code>，比如 <code class="docutils literal notranslate"><span class="pre">2020-Q1</span></code> 表示 2020 年的第一季度。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">axisFormat</span>  <span class="o">%</span><span class="n">Y</span><span class="o">-%</span><span class="n">m</span><span class="o">-%</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>支持以下格式化字符串：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">a</span> <span class="o">-</span> <span class="n">abbreviated</span> <span class="n">weekday</span> <span class="n">name</span><span class="o">.</span>
+<span class="o">%</span><span class="n">A</span> <span class="o">-</span> <span class="n">full</span> <span class="n">weekday</span> <span class="n">name</span><span class="o">.</span>
+<span class="o">%</span><span class="n">b</span> <span class="o">-</span> <span class="n">abbreviated</span> <span class="n">month</span> <span class="n">name</span><span class="o">.</span>
+<span class="o">%</span><span class="n">B</span> <span class="o">-</span> <span class="n">full</span> <span class="n">month</span> <span class="n">name</span><span class="o">.</span>
+<span class="o">%</span><span class="n">c</span> <span class="o">-</span> <span class="n">date</span> <span class="ow">and</span> <span class="n">time</span><span class="p">,</span> <span class="k">as</span> <span class="s2">&quot;</span><span class="si">%a</span><span class="s2"> %b </span><span class="si">%e</span><span class="s2"> %H:%M:%S %Y&quot;</span><span class="o">.</span>
+<span class="o">%</span><span class="n">d</span> <span class="o">-</span> <span class="n">zero</span><span class="o">-</span><span class="n">padded</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">month</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">01</span><span class="p">,</span><span class="mi">31</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">e</span> <span class="o">-</span> <span class="n">space</span><span class="o">-</span><span class="n">padded</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">month</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">31</span><span class="p">];</span> <span class="n">equivalent</span> <span class="n">to</span> <span class="o">%</span><span class="n">_d</span><span class="o">.</span>
+<span class="o">%</span><span class="n">H</span> <span class="o">-</span> <span class="n">hour</span> <span class="p">(</span><span class="mi">24</span><span class="o">-</span><span class="n">hour</span> <span class="n">clock</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">23</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">I</span> <span class="o">-</span> <span class="n">hour</span> <span class="p">(</span><span class="mi">12</span><span class="o">-</span><span class="n">hour</span> <span class="n">clock</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">01</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">j</span> <span class="o">-</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">year</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">001</span><span class="p">,</span><span class="mi">366</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">m</span> <span class="o">-</span> <span class="n">month</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">01</span><span class="p">,</span><span class="mi">12</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">M</span> <span class="o">-</span> <span class="n">minute</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">59</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">L</span> <span class="o">-</span> <span class="n">milliseconds</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">000</span><span class="p">,</span> <span class="mi">999</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">p</span> <span class="o">-</span> <span class="n">either</span> <span class="n">AM</span> <span class="ow">or</span> <span class="n">PM</span><span class="o">.</span>
+<span class="o">%</span><span class="n">S</span> <span class="o">-</span> <span class="n">second</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">61</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">U</span> <span class="o">-</span> <span class="n">week</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">year</span> <span class="p">(</span><span class="n">Sunday</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">53</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">w</span> <span class="o">-</span> <span class="n">weekday</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">0</span><span class="p">(</span><span class="n">Sunday</span><span class="p">),</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">W</span> <span class="o">-</span> <span class="n">week</span> <span class="n">number</span> <span class="n">of</span> <span class="n">the</span> <span class="n">year</span> <span class="p">(</span><span class="n">Monday</span> <span class="k">as</span> <span class="n">the</span> <span class="n">first</span> <span class="n">day</span> <span class="n">of</span> <span class="n">the</span> <span class="n">week</span><span class="p">)</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">53</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">x</span> <span class="o">-</span> <span class="n">date</span><span class="p">,</span> <span class="k">as</span> <span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="o">.</span>
+<span class="o">%</span><span class="n">X</span> <span class="o">-</span> <span class="n">time</span><span class="p">,</span> <span class="k">as</span> <span class="s2">&quot;%H:%M:%S&quot;</span><span class="o">.</span>
+<span class="o">%</span><span class="n">y</span> <span class="o">-</span> <span class="n">year</span> <span class="n">without</span> <span class="n">century</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span> <span class="p">[</span><span class="mi">00</span><span class="p">,</span><span class="mi">99</span><span class="p">]</span><span class="o">.</span>
+<span class="o">%</span><span class="n">Y</span> <span class="o">-</span> <span class="n">year</span> <span class="k">with</span> <span class="n">century</span> <span class="k">as</span> <span class="n">a</span> <span class="n">decimal</span> <span class="n">number</span><span class="o">.</span>
+<span class="o">%</span><span class="n">Z</span> <span class="o">-</span> <span class="n">time</span> <span class="n">zone</span> <span class="n">offset</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="s2">&quot;-0700&quot;</span><span class="o">.</span>
+<span class="o">%%</span> <span class="o">-</span> <span class="n">a</span> <span class="n">literal</span> <span class="s2">&quot;%&quot;</span> <span class="n">character</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>更多信息见：https://github.com/mbostock/d3/wiki/Time-Formatting</p>
+</div>
+</div>
+<div class="section" id="today">
+<h2>Today 标记<a class="headerlink" href="#today" title="永久链接至标题">¶</a></h2>
+<p>你可以设计或隐藏当前日期的标记。要设计它，请为 <code class="docutils literal notranslate"><span class="pre">todayMarker</span></code> 键添加一个值。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">todayMarker</span> <span class="n">stroke</span><span class="o">-</span><span class="n">width</span><span class="p">:</span><span class="mi">5</span><span class="n">px</span><span class="p">,</span><span class="n">stroke</span><span class="p">:</span><span class="c1">#0f0,opacity:0.5</span>
+</pre></div>
+</div>
+<p>要隐藏标记，将 <code class="docutils literal notranslate"><span class="pre">todayMarker</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">off</span></code>。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">todayMarker</span> <span class="n">off</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/nocode-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./mermaid"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+<div class="section">
+   
+</div>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="flowcharts.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">流程图</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="intro.html" title="下一页 页">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">简介</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      通过 xinetzone<br/>
+    
+        &copy; 版权 2021, xinetzone.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

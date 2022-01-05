@@ -80,7 +80,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script src="../_static/translations.js"></script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -94,7 +94,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="简介" href="intro.html" />
+    <link rel="next" title="类图" href="classDiagram.html" />
     <link rel="prev" title="代码" href="../start/code.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
@@ -161,7 +161,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
@@ -235,8 +235,18 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="intro.html">
-     简介
+    <a class="reference internal" href="classDiagram.html">
+     类图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="entityRelationshipDiagram.html">
+     实体关系图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples.html">
+     例子
     </a>
    </li>
    <li class="toctree-l2">
@@ -245,13 +255,38 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="state-diagrams.html">
-     状态图
+    <a class="reference internal" href="gantt.html">
+     甘特图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro.html">
+     简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pie.html">
+     饼图
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="requirement-diagrams.html">
      需求图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sequence-diagrams.html">
+     序列图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="state-diagrams.html">
+     状态图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="user-journey.html">
+     用户旅程图
     </a>
    </li>
   </ul>
@@ -284,8 +319,8 @@ commentsRunWhenDOMLoaded(addUtterances);
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="切换导航" aria-controls="site-navigation"
+                title="切换导航" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -293,7 +328,7 @@ commentsRunWhenDOMLoaded(addUtterances);
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -301,11 +336,11 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/mermaid/index.md.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -317,23 +352,23 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/xinetzone/nocode-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+                data-toggle="tooltip" data-placement="left" title="源库"><i
+                    class="fab fa-github"></i>资料库</button></a>
         <a class="issues-button"
             href="https://github.com/xinetzone/nocode-book/issues/new?title=Issue%20on%20page%20%2Fmermaid/index.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                title="打开一个问题"><i class="fas fa-lightbulb"></i>公开的问题</button></a>
         <a class="edit-button" href="https://github.com/xinetzone/nocode-book/edit/main/docs/mermaid/index.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+                title="编辑这个页面"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -341,28 +376,50 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>Mermaid</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+            </div>
+            
               <div>
                  <div class="tex2jax_ignore mathjax_ignore section" id="mermaid">
 <h1>Mermaid<a class="headerlink" href="#mermaid" title="永久链接至标题">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">简介</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#id2">流程图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#id3">时序图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#id4">甘特图</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#graph">Graph</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#id18">图表(graph)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#sequence-diagram">序列图(sequence diagram)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#gantt">甘特图(gantt)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro.html#bug">一个小 Bug</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classDiagram.html">类图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id3">定义 <code class="docutils literal notranslate"><span class="pre">class</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id4">定义 class 的成员</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id9">定义关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#cardinality-multiplicity">关系上的 cardinality / Multiplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id11">class 注解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id12">设置图表的方向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id13">交互性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id15">风格</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="entityRelationshipDiagram.html">实体关系图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entityRelationshipDiagram.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entityRelationshipDiagram.html#id9">风格</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">例子</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id2">基础饼图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id3">基础序列图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id4">基础流程图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id5">带样式的大流程图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#sequencediagram-loops-alt-and-opt">SequenceDiagram: Loops, alt and opt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#sequencediagram-message-to-self-in-loop">SequenceDiagram: Message to self in loop</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="flowcharts.html">流程图</a><ul>
@@ -377,6 +434,48 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id17">样式和类</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="gantt.html">甘特图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gantt.html#id2">给用户的说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gantt.html#id3">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gantt.html#id7">设置日期</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gantt.html#today">Today 标记</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id2">流程图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id3">时序图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id4">甘特图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#graph">Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id18">图表(graph)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#sequence-diagram">序列图(sequence diagram)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#gantt">甘特图(gantt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#bug">一个小 Bug</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pie.html">饼图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pie.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pie.html#id3">示例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirement-diagrams.html">需求图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="requirement-diagrams.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="requirement-diagrams.html#id6">大型案例</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sequence-diagrams.html">序列图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id6">信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id7">激活</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id8">注解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id9">循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#alt">Alt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#parallel">Parallel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id10">背景高亮</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id11">转义字符的实体代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#sequencenumbers">sequenceNumbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#actor">Actor 菜单</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="state-diagrams.html">状态图</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id2">状态</a></li>
 <li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id3">过渡</a></li>
@@ -389,11 +488,140 @@ commentsRunWhenDOMLoaded(addUtterances);
 <li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id10">设置图表的方向</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="user-journey.html">用户旅程图</a></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/nocode-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./mermaid"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="mermaid">
+<h1>Mermaid<a class="headerlink" href="#mermaid" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classDiagram.html">类图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id3">定义 <code class="docutils literal notranslate"><span class="pre">class</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id4">定义 class 的成员</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id9">定义关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#cardinality-multiplicity">关系上的 cardinality / Multiplicity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id11">class 注解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id12">设置图表的方向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id13">交互性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classDiagram.html#id15">风格</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="entityRelationshipDiagram.html">实体关系图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="entityRelationshipDiagram.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entityRelationshipDiagram.html#id9">风格</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">例子</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id2">基础饼图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id3">基础序列图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id4">基础流程图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#id5">带样式的大流程图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#sequencediagram-loops-alt-and-opt">SequenceDiagram: Loops, alt and opt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#sequencediagram-message-to-self-in-loop">SequenceDiagram: Message to self in loop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="flowcharts.html">流程图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id2">节点（默认）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id4">方向</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id5">节点形状</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id6">节点之间的边</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id8">箭头</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id11">破坏语法的特殊字符</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id13">子图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id15">交互性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="flowcharts.html#id17">样式和类</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gantt.html">甘特图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gantt.html#id2">给用户的说明</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gantt.html#id3">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gantt.html#id7">设置日期</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gantt.html#today">Today 标记</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">简介</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id2">流程图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id3">时序图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id4">甘特图</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#graph">Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#id18">图表(graph)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#sequence-diagram">序列图(sequence diagram)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#gantt">甘特图(gantt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro.html#bug">一个小 Bug</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pie.html">饼图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pie.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pie.html#id3">示例</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="requirement-diagrams.html">需求图</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="requirement-diagrams.html#id2">语法</a></li>
 <li class="toctree-l2"><a class="reference internal" href="requirement-diagrams.html#id6">大型案例</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="sequence-diagrams.html">序列图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id2">语法</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id6">信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id7">激活</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id8">注解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id9">循环</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#alt">Alt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#parallel">Parallel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id10">背景高亮</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#id11">转义字符的实体代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#sequencenumbers">sequenceNumbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sequence-diagrams.html#actor">Actor 菜单</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="state-diagrams.html">状态图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id2">状态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id3">过渡</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id4">开始和结束</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id5">复合状态</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id6">选项</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id7">分叉</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id8">注解</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id9">并发性</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state-diagrams.html#id10">设置图表的方向</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="user-journey.html">用户旅程图</a></li>
 </ul>
 </div>
 </div>
@@ -433,10 +661,10 @@ commentsRunWhenDOMLoaded(addUtterances);
             <p class="prev-next-title">代码</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="intro.html" title="下一页 页">
+    <a class='right-next' id="next-link" href="classDiagram.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">简介</p>
+        <p class="prev-next-title">类图</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -445,15 +673,13 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By xinetzone<br/>
-        
-            &copy; Copyright 2021, xinetzone.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      通过 xinetzone<br/>
+    
+        &copy; 版权 2021, xinetzone.<br/>
+  </p>
+</footer>
 </main>
 
 

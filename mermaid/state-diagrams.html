@@ -80,7 +80,7 @@ var addUtterances = () => {
 commentsRunWhenDOMLoaded(addUtterances);
 </script>
     <script src="../_static/translations.js"></script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
@@ -94,8 +94,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="需求图" href="requirement-diagrams.html" />
-    <link rel="prev" title="流程图" href="flowcharts.html" /> 
+    <link rel="next" title="用户旅程图" href="user-journey.html" />
+    <link rel="prev" title="序列图" href="sequence-diagrams.html" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
     
@@ -161,7 +161,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="current nav bd-sidenav">
@@ -235,13 +235,48 @@ commentsRunWhenDOMLoaded(addUtterances);
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="intro.html">
-     简介
+    <a class="reference internal" href="classDiagram.html">
+     类图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="entityRelationshipDiagram.html">
+     实体关系图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples.html">
+     例子
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="flowcharts.html">
      流程图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gantt.html">
+     甘特图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro.html">
+     简介
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pie.html">
+     饼图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="requirement-diagrams.html">
+     需求图
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sequence-diagrams.html">
+     序列图
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -250,8 +285,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="requirement-diagrams.html">
-     需求图
+    <a class="reference internal" href="user-journey.html">
+     用户旅程图
     </a>
    </li>
   </ul>
@@ -284,8 +319,8 @@ commentsRunWhenDOMLoaded(addUtterances);
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="切换导航" aria-controls="site-navigation"
+                title="切换导航" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -293,7 +328,7 @@ commentsRunWhenDOMLoaded(addUtterances);
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="下载此页面"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -301,11 +336,11 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="../_sources/mermaid/state-diagrams.md.txt"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="下载源文件" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="列印成PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
@@ -317,23 +352,23 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://github.com/xinetzone/nocode-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
+                data-toggle="tooltip" data-placement="left" title="源库"><i
+                    class="fab fa-github"></i>资料库</button></a>
         <a class="issues-button"
             href="https://github.com/xinetzone/nocode-book/issues/new?title=Issue%20on%20page%20%2Fmermaid/state-diagrams.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+                title="打开一个问题"><i class="fas fa-lightbulb"></i>公开的问题</button></a>
         <a class="edit-button" href="https://github.com/xinetzone/nocode-book/edit/main/docs/mermaid/state-diagrams.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+                title="编辑这个页面"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
 </div>
 
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="全屏模式"
+        title="全屏模式"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -341,7 +376,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
 
         <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> 导航
@@ -399,7 +434,697 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
     </div>
 </div>
-    <div id="main-content" class="row">
+    <!-- Table of contents that is only displayed when printing the page -->
+    <div id="jb-print-docs-body" class="onlyprint">
+        <h1>状态图</h1>
+        <!-- Table of contents -->
+        <div id="print-main-content" class="row">
+            <div class="col-12 col-md-12 pl-md-5 pr-md-5">
+            <div id="jb-print-toc">
+                
+                <div>
+                    <h2> 导航 </h2>
+                </div>
+                <nav aria-label="Page">
+                    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   状态
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   过渡
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   开始和结束
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   复合状态
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   选项
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   分叉
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   注解
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id9">
+   并发性
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   设置图表的方向
+  </a>
+ </li>
+</ul>
+
+                </nav>
+            </div>
+            
+              <div>
+                 <div class="tex2jax_ignore mathjax_ignore section" id="id1">
+<h1>状态图<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>“状态图是计算机科学和相关领域中用来描述系统行为的一种图示。状态图要求所描述的系统由有限数量的状态组成；有时，情况确实如此，而在其他时候，这是一个合理的抽象。” —— 维基百科</p>
+</div></blockquote>
+<p>Mermaid 可以渲染状态图。该语法试图与 plantUml 中使用的语法相一致，因为这将使用户更容易在 mermaid 和 plantUml 之间分享图表。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">Still</span>
+    <span class="n">Still</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+
+    <span class="n">Still</span> <span class="o">--&gt;</span> <span class="n">Moving</span>
+    <span class="n">Moving</span> <span class="o">--&gt;</span> <span class="n">Still</span>
+    <span class="n">Moving</span> <span class="o">--&gt;</span> <span class="n">Crash</span>
+    <span class="n">Crash</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    [*] --&gt; Still
+    Still --&gt; [*]
+
+    Still --&gt; Moving
+    Moving --&gt; Still
+    Moving --&gt; Crash
+    Crash --&gt; [*]
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+<p>旧的渲染器：</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">Still</span>
+    <span class="n">Still</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+
+    <span class="n">Still</span> <span class="o">--&gt;</span> <span class="n">Moving</span>
+    <span class="n">Moving</span> <span class="o">--&gt;</span> <span class="n">Still</span>
+    <span class="n">Moving</span> <span class="o">--&gt;</span> <span class="n">Crash</span>
+    <span class="n">Crash</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram
+    [*] --&gt; Still
+    Still --&gt; [*]
+
+    Still --&gt; Moving
+    Moving --&gt; Still
+    Moving --&gt; Crash
+    Crash --&gt; [*]
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+<p>在状态图中，系统被描述为它的状态，以及系统的状态如何通过转换而改变为另一个状态。上面的示例图显示了三种状态：<strong>Still</strong>，<strong>Moving</strong> 和 <strong>Crash</strong>。你开始时处于静止状态。从静止状态，你可以改变状态为移动状态。在移动状态下，你可以把状态变回静止或崩溃。从静止状态到崩溃状态是没有过渡的。</p>
+<div class="section" id="id2">
+<h2>状态<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>一个状态可以用多种方式声明。最简单的方法是定义一个状态 ID 作为描述。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="n">s1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    s1
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+<p>另一种方法是使用带有描述的状态关键词，如下所述：</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="n">state</span> <span class="s2">&quot;This is a state description&quot;</span> <span class="k">as</span> <span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    state &quot;This is a state description&quot; as s2
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+<p>另一种定义带有描述的状态的方法是定义状态 ID，然后是冒号和描述。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="n">s2</span> <span class="p">:</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">state</span> <span class="n">description</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    s2 : This is a state description
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>过渡<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>过渡是一个状态进入另一个状态的路径/边缘。这是用文本箭头表示的，“–&gt;”。</p>
+<p>当你在两个状态之间定义了一个过渡，并且这些状态还没有被定义，那么未定义的状态就会用过渡的 id 来定义。你以后可以为这样定义的状态添加描述。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="n">s1</span> <span class="o">--&gt;</span> <span class="n">s2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    s1 --&gt; s2
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+<p>可以给过渡添加文字。来描述它所代表的内容。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="n">s1</span> <span class="o">--&gt;</span> <span class="n">s2</span><span class="p">:</span> <span class="n">A</span> <span class="n">transition</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    s1 --&gt; s2: A transition
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>开始和结束<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>有两个特殊的状态表示图的开始和停止。这些都是用 <code class="docutils literal notranslate"><span class="pre">[*]</span></code> 的语法写的，过渡到它的方向决定了它是一个开始或停止的状态。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">s1</span>
+    <span class="n">s1</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    [*] --&gt; s1
+    s1 --&gt; [*]
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>复合状态<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>在现实世界中使用状态图时，你经常会遇到多维的图表，因为一个状态可以
+有几个内部状态。在这个术语中，这些被称为复合状态。</p>
+<p>为了定义一个复合状态，你需要使用 <code class="docutils literal notranslate"><span class="pre">state</span></code> 关键字，后面跟一个 id，然后在复合状态的主体之间 <code class="docutils literal notranslate"><span class="pre">{}</span></code>。请看下面的例子：</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">First</span>
+    <span class="n">state</span> <span class="n">First</span> <span class="p">{</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">second</span>
+        <span class="n">second</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    [*] --&gt; First
+    state First {
+        [*] --&gt; second
+        second --&gt; [*]
+    }
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+<p>你可以分几层来做这件事：</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">First</span>
+
+    <span class="n">state</span> <span class="n">First</span> <span class="p">{</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">Second</span>
+
+        <span class="n">state</span> <span class="n">Second</span> <span class="p">{</span>
+            <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">second</span>
+            <span class="n">second</span> <span class="o">--&gt;</span> <span class="n">Third</span>
+
+            <span class="n">state</span> <span class="n">Third</span> <span class="p">{</span>
+                <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">third</span>
+                <span class="n">third</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    [*] --&gt; First
+
+    state First {
+        [*] --&gt; Second
+
+        state Second {
+            [*] --&gt; second
+            second --&gt; Third
+
+            state Third {
+                [*] --&gt; third
+                third --&gt; [*]
+            }
+        }
+    }
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+<p>你也可以定义复合状态之间的过渡：</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">First</span>
+    <span class="n">First</span> <span class="o">--&gt;</span> <span class="n">Second</span>
+    <span class="n">First</span> <span class="o">--&gt;</span> <span class="n">Third</span>
+
+    <span class="n">state</span> <span class="n">First</span> <span class="p">{</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">fir</span>
+        <span class="n">fir</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">state</span> <span class="n">Second</span> <span class="p">{</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">sec</span>
+        <span class="n">sec</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="n">state</span> <span class="n">Third</span> <span class="p">{</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">thi</span>
+        <span class="n">thi</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    [*] --&gt; First
+    First --&gt; Second
+    First --&gt; Third
+
+    state First {
+        [*] --&gt; fir
+        fir --&gt; [*]
+    }
+    state Second {
+        [*] --&gt; sec
+        sec --&gt; [*]
+    }
+    state Third {
+        [*] --&gt; thi
+        thi --&gt; [*]
+    }
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+<p><em>你不能定义属于不同复合状态的内部状态之间的转换</em>。</p>
+</div>
+<div class="section" id="id6">
+<h2>选项<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<p>有时你需要在两条或多条路径之间建立一个选择模型，你可以使用 &lt;&lt;choice&gt;&gt;。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="n">state</span> <span class="n">if_state</span> <span class="o">&lt;&lt;</span><span class="n">choice</span><span class="o">&gt;&gt;</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">IsPositive</span>
+    <span class="n">IsPositive</span> <span class="o">--&gt;</span> <span class="n">if_state</span>
+    <span class="n">if_state</span> <span class="o">--&gt;</span> <span class="kc">False</span><span class="p">:</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span>
+    <span class="n">if_state</span> <span class="o">--&gt;</span> <span class="kc">True</span> <span class="p">:</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    state if_state &lt;&lt;choice&gt;&gt;
+    [*] --&gt; IsPositive
+    IsPositive --&gt; if_state
+    if_state --&gt; False: if n &lt; 0
+    if_state --&gt; True : if n &gt;= 0
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>分叉<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>可以在图中指定一个分叉，使用 &lt;&lt;fork&gt;&gt; &lt;&lt;join&gt;&gt;。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="n">state</span> <span class="n">fork_state</span> <span class="o">&lt;&lt;</span><span class="n">fork</span><span class="o">&gt;&gt;</span>
+      <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">fork_state</span>
+      <span class="n">fork_state</span> <span class="o">--&gt;</span> <span class="n">State2</span>
+      <span class="n">fork_state</span> <span class="o">--&gt;</span> <span class="n">State3</span>
+
+      <span class="n">state</span> <span class="n">join_state</span> <span class="o">&lt;&lt;</span><span class="n">join</span><span class="o">&gt;&gt;</span>
+      <span class="n">State2</span> <span class="o">--&gt;</span> <span class="n">join_state</span>
+      <span class="n">State3</span> <span class="o">--&gt;</span> <span class="n">join_state</span>
+      <span class="n">join_state</span> <span class="o">--&gt;</span> <span class="n">State4</span>
+      <span class="n">State4</span> <span class="o">--&gt;</span> <span class="p">[</span><span class="o">*</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+               stateDiagram-v2
+    state fork_state &lt;&lt;fork&gt;&gt;
+      [*] --&gt; fork_state
+      fork_state --&gt; State2
+      fork_state --&gt; State3
+
+      state join_state &lt;&lt;join&gt;&gt;
+      State2 --&gt; join_state
+      State3 --&gt; join_state
+      join_state --&gt; State4
+      State4 --&gt; [*]
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>注解<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>有时，没有什么比一张便利贴更能说明问题。在状态图中也是如此。</p>
+<p>在这里，你可以选择把便条放在一个节点的 <em>right of</em> 或 <em>left of</em> 的位置。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    stateDiagram-v2
+        State1: The state with a note
+        note right of State1
+            Important information! You can write
+            notes.
+        end note
+        State1 --&gt; State2
+        note left of State2 : This is the note to the left.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+                stateDiagram-v2
+        State1: The state with a note
+        note right of State1
+            Important information! You can write
+            notes.
+        end note
+        State1 --&gt; State2
+        note left of State2 : This is the note to the left.
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>并发性<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>如同在plantUml中，你可以使用 <code class="docutils literal notranslate"><span class="pre">--</span></code> 符号指定并发性。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span><span class="o">-</span><span class="n">v2</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">Active</span>
+
+    <span class="n">state</span> <span class="n">Active</span> <span class="p">{</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">NumLockOff</span>
+        <span class="n">NumLockOff</span> <span class="o">--&gt;</span> <span class="n">NumLockOn</span> <span class="p">:</span> <span class="n">EvNumLockPressed</span>
+        <span class="n">NumLockOn</span> <span class="o">--&gt;</span> <span class="n">NumLockOff</span> <span class="p">:</span> <span class="n">EvNumLockPressed</span>
+        <span class="o">--</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">CapsLockOff</span>
+        <span class="n">CapsLockOff</span> <span class="o">--&gt;</span> <span class="n">CapsLockOn</span> <span class="p">:</span> <span class="n">EvCapsLockPressed</span>
+        <span class="n">CapsLockOn</span> <span class="o">--&gt;</span> <span class="n">CapsLockOff</span> <span class="p">:</span> <span class="n">EvCapsLockPressed</span>
+        <span class="o">--</span>
+        <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">ScrollLockOff</span>
+        <span class="n">ScrollLockOff</span> <span class="o">--&gt;</span> <span class="n">ScrollLockOn</span> <span class="p">:</span> <span class="n">EvScrollLockPressed</span>
+        <span class="n">ScrollLockOn</span> <span class="o">--&gt;</span> <span class="n">ScrollLockOff</span> <span class="p">:</span> <span class="n">EvScrollLockPressed</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram-v2
+    [*] --&gt; Active
+
+    state Active {
+        [*] --&gt; NumLockOff
+        NumLockOff --&gt; NumLockOn : EvNumLockPressed
+        NumLockOn --&gt; NumLockOff : EvNumLockPressed
+        --
+        [*] --&gt; CapsLockOff
+        CapsLockOff --&gt; CapsLockOn : EvCapsLockPressed
+        CapsLockOn --&gt; CapsLockOff : EvCapsLockPressed
+        --
+        [*] --&gt; ScrollLockOff
+        ScrollLockOff --&gt; ScrollLockOn : EvScrollLockPressed
+        ScrollLockOn --&gt; ScrollLockOff : EvScrollLockPressed
+    }
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>设置图表的方向<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>对于状态图，你可以使用方向语句来设置图表的渲染方向，就像本例中一样。</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">stateDiagram</span>
+    <span class="n">direction</span> <span class="n">LR</span>
+    <span class="p">[</span><span class="o">*</span><span class="p">]</span> <span class="o">--&gt;</span> <span class="n">A</span>
+    <span class="n">A</span> <span class="o">--&gt;</span> <span class="n">B</span>
+    <span class="n">B</span> <span class="o">--&gt;</span> <span class="n">C</span>
+    <span class="n">state</span> <span class="n">B</span> <span class="p">{</span>
+      <span class="n">direction</span> <span class="n">LR</span>
+      <span class="n">a</span> <span class="o">--&gt;</span> <span class="n">b</span>
+    <span class="p">}</span>
+    <span class="n">B</span> <span class="o">--&gt;</span> <span class="n">D</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<div class="mermaid">
+            stateDiagram
+    direction LR
+    [*] --&gt; A
+    A --&gt; B
+    B --&gt; C
+    state B {
+      direction LR
+      a --&gt; b
+    }
+    B --&gt; D
+        </div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "xinetzone/nocode-book",
+            ref: "main",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./mermaid"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+<div class="section">
+   
+</div>
+
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <div id="main-content" class="row noprint">
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
         
               <div>
@@ -1029,17 +1754,17 @@ commentsRunWhenDOMLoaded(addUtterances);
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="flowcharts.html" title="上一页 页">
+    <a class='left-prev' id="prev-link" href="sequence-diagrams.html" title="上一页 页">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">上一页</p>
-            <p class="prev-next-title">流程图</p>
+            <p class="prev-next-title">序列图</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="requirement-diagrams.html" title="下一页 页">
+    <a class='right-next' id="next-link" href="user-journey.html" title="下一页 页">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">下一页</p>
-        <p class="prev-next-title">需求图</p>
+        <p class="prev-next-title">用户旅程图</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -1048,15 +1773,13 @@ commentsRunWhenDOMLoaded(addUtterances);
         </div>
     </div>
     <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By xinetzone<br/>
-        
-            &copy; Copyright 2021, xinetzone.<br/>
-      </p>
-    </div>
-  </footer>
+  <p>
+    
+      通过 xinetzone<br/>
+    
+        &copy; 版权 2021, xinetzone.<br/>
+  </p>
+</footer>
 </main>
 
 
